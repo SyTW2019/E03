@@ -1,6 +1,6 @@
  <h1>E03</h1>
  
-<h3>**Clase de hoy**<h3>:
+<h3>**Clase de hoy**:</h3>
 
 
 -No usar ramas públicas como master para hacer commit, usar las ramas locales.
