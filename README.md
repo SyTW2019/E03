@@ -1,6 +1,6 @@
  <h1>E03</h1>
  
-**Clase de hoy**:
+<h3>**Clase de hoy**<h3>:
 
 
 -No usar ramas públicas como master para hacer commit, usar las ramas locales.
@@ -31,7 +31,7 @@
   
 **PASOS A SEGUIR**: 
 
-1. **Pull** 
+1.**Pull** 
 
 2.**Check out**: git checkout -b feature-1185-add-commenting
 
