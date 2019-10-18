@@ -1,5 +1,7 @@
  <h1>E03</h1>
+ 
 **Clase de hoy**:
+
 
 -No usar ramas públicas como master para hacer commit, usar las ramas locales.
 
@@ -43,11 +45,11 @@
 
 ***Alternativa para que no queden en el master commits***: 
 
--git checkout master 
+> git checkout master 
 
--git pull
+> git pull
 
--git checkout feature-1185-add-commenting
+> git checkout feature-1185-add-commenting
 
--git merge master
+> git merge master
 
