@@ -31,7 +31,7 @@
   
 **PASOS A SEGUIR**: 
 
-1.**Pull** 
+1. **Pull** 
 
 2. **Check out**: git checkout -b feature-1185-add-commenting
 
