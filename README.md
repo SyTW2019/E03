@@ -33,15 +33,15 @@
 
 1. **Pull** 
 
-2.**Check out**: git checkout -b feature-1185-add-commenting
+2. **Check out**: git checkout -b feature-1185-add-commenting
 
-3.**Rebase/merge**: git rebase origin/master , git fetch origin master
+3. **Rebase/merge**: git rebase origin/master , git fetch origin master
 
-4.**Merge con master** 
+4. **Merge con master** 
 
 (4.5Hacer un pull para evitar conflictos de actualización(no le gusta, prefiere que hagamos git fetch para que no queden commits en la rama master)) 
 
-5.**Push** (si hacemos merges hay que ir haciendo git fetch para ir teniendo el código actualizado, si no puede dar conflicto): git push origin master
+5. **Push** (si hacemos merges hay que ir haciendo git fetch para ir teniendo el código actualizado, si no puede dar conflicto): git push origin master
 
 ***Alternativa para que no queden en el master commits***: 
 
