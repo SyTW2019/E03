@@ -1,2 +1,0 @@
-Ejercicios de merge entre ramas
-Tras la clonación del repositorio, el siguiente paso es la realización de los ejercicios a modo de repaso que se proponen en el link: https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
