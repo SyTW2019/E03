@@ -11,40 +11,26 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import H1 from 'components/myH1'
+import Input from 'components/Input'
+import Button from 'components/myButton'
 
 import GlobalStyle from '../../global-styles';
 
-const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
-  margin: 0 auto;
-  display: flex;
-  min-height: 100%;
-  padding: 0 16px;
-  flex-direction: column;
-`;
-
 export default function App() {
+
+  //QUIZAS GUARDAR NOMBRE CORREO Y CONTRASEÑA CON STATE
+
   return (
-    <AppWrapper>
-      <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
-      >
-        <meta name="description" content="A React.js Boilerplate application" />
-      </Helmet>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
-      <Footer />
-      <GlobalStyle />
-    </AppWrapper>
+
+    <div>
+    <H1 title="Introduzca nombre"/>
+    <Input id="nom"/>
+    <H1 title="Introduzca correo electrónico"/>
+    <Input id="cor"/>
+    <H1 title="Introduzca contraseña"/>
+    <Input id="con"/>
+    <Button onClick="inDB()" title="añadir"/>
+    </div>
   );
 }
