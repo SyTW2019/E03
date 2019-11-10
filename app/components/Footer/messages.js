@@ -8,9 +8,9 @@ import { defineMessages } from 'react-intl';
 export const scope = 'boilerplate.components.Footer';
 
 export default defineMessages({
-  licenseMessage: {
-    id: `${scope}.license.message`,
-    defaultMessage: 'This project is licensed under the MIT license.',
+  message: {
+    id: `${scope}.message`,
+    defaultMessage: 'This is the Footer for EventFinder!!!',
   },
   authorMessage: {
     id: `${scope}.author.message`,

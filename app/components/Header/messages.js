@@ -12,8 +12,18 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
-  features: {
-    id: `${scope}.features`,
-    defaultMessage: 'Features',
+  SignIn: {
+    id: `${scope}.SignIn`,
+    defaultMessage: 'Sign In',
+  },
+
+  Register: {
+    id: `${scope}.Register`,
+    defaultMessage: 'Register',
+  },	
+
+  Category: {
+    id: `${scope}.Category`,
+    defaultMessage: 'Category',
   },
 });

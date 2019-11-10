@@ -15,11 +15,12 @@ export default styled(Link)`
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
+  border-right: 4px solid #000;
+  border-bottom: 3px solid #000; 
+  color: #000;
 
   &:active {
-    background: #41addd;
+    background: #000;
     color: #fff;
   }
 `;

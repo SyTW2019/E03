@@ -5,25 +5,53 @@ import A from './A';
 import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
-import Banner from './banner.jpg';
+import Banner from './event.jpg';
 import messages from './messages';
 
 function Header() {
   return (
     <div>
-      <A href="https://www.reactboilerplate.com/">
+      <A href="/">
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
       <NavBar>
-        <HeaderLink to="/">
+        <HeaderLink to="/" >
           <FormattedMessage {...messages.home} />
         </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.features} />
+        <HeaderLink to="/SignIn">
+          <FormattedMessage {...messages.SignIn} />
         </HeaderLink>
+	<HeaderLink to="/Register">
+          <FormattedMessage {...messages.Register} />
+        </HeaderLink>
+        <HeaderLink to="/Category">
+          <FormattedMessage {...messages.Category} />
+        </HeaderLink>
+
       </NavBar>
     </div>
   );
 }
 
 export default Header;
+
+
+
+/*<section>
+       // <FormattedMessage /> //{...messages.licenseMessage} />
+      </section>
+      <section>
+        <LocaleToggle />
+      </section>
+      <section>
+        //<FormattedMessage
+         // {...messages.authorMessage}
+          values={{
+            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
+          }}
+        ///>
+      </section>*/
+
+
+
+
