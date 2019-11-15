@@ -23,6 +23,7 @@ function Header() {
         </HeaderLink>
 	<HeaderLink to="/Register">
           <FormattedMessage {...messages.Register} />
+
         </HeaderLink>
         <HeaderLink to="/Category">
           <FormattedMessage {...messages.Category} />
@@ -32,6 +33,8 @@ function Header() {
     </div>
   );
 }
+
+
 
 export default Header;
 
