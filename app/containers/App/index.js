@@ -23,9 +23,11 @@ import GlobalStyle from '../../global-styles';
 export default function App() {
 
   //QUIZAS GUARDAR NOMBRE CORREO Y CONTRASEÑA CON STATE
+  const handleRegister = ()=>{
+    
+  }
 
   return (
-
     <div>
     <Header />	  
     <H1 title="Introduzca nombre"/>
@@ -34,7 +36,7 @@ export default function App() {
     <Input id="cor"/>
     <H1 title="Introduzca contraseña"/>
     <Input id="con"/>
-    <Button onClick="inDB()" title="añadir" />
+    <Button onClick={handleRegister} title="añadir" />
     <br/>	  
     <Card />
     <br />	  
