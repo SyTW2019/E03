@@ -35,6 +35,13 @@ app.get('*.js', (req, res, next) => {
   next();
 });
 
+app.use(express.urlencoded())
+app.use(express.json())
+app.post('/usuario',(req,res,next)=>{
+  console.log(req.body) 
+  res.send('recibido')
+
+})
 // Start your app.
 app.listen(port, host, async err => {
   if (err) {
