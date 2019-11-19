@@ -5,7 +5,7 @@ export default class Input extends React.Component {
     return(
       <div>
         <input 
-          text={this.props.text}
+          name={this.props.name}
           ref={this.props.ref}
           type={this.props.type}
           value={this.props.value}
