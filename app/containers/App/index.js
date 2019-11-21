@@ -6,41 +6,39 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
 
 import axios from 'axios';
 
-import H1 from 'components/myH1'
-import Input from 'components/Input'
-import Button from 'components/myButton'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
-import Card from 'components/Card'
 
 import GlobalStyle from '../../global-styles';
 import SignUp from '../../components/SignUp';
 
+import Registro from '../Registro';
+import Card from '../PaginaPrincipal';
+import Inicio from '../InicioSesion';
+import Categoria from '../Categorias';
+import NotFound from '../NotFound';
+
+
 export default function App() {
 
-  //QUIZAS GUARDAR NOMBRE CORREO Y CONTRASEÑA CON STATE
-  function nueva(user){
-    axios.post('http://localhost:3000/usuario', user)
-    .then(function (response) {
-      console.log(response)
-    })
-    .catch(function (error) {
-      console.log(error)
-    });
-   } 
-
   return (
-    <div>
-      <Header />
-      <SignUp action={nueva} />
-      <Footer />
-    </div>
+    <Router>
+      <Header/>
+      <Switch>
+        <Route exact path='/' Component={Card}><Card/></Route>
+        <Route path='/SignUp' Component={Registro}><Registro/></Route>
+        <Route path='/SignIn' Component={Inicio}><Inicio/></Route>
+        <Route path='/Category' Component={Categoria}><Categoria/></Route>
+        <Route path="*" component={NotFound}><NotFound/></Route>
+      </Switch>
+      <Footer/>
+    </Router>
   );
 }

@@ -17,10 +17,10 @@ export default defineMessages({
     defaultMessage: 'Sign In',
   },
 
-  Register: {
-    id: `${scope}.Register`,
-    defaultMessage: 'Register',
-  },	
+  SignUp: {
+    id: `${scope}.SignUp`,
+    defaultMessage: 'Sign Up',
+  },
 
   Category: {
     id: `${scope}.Category`,

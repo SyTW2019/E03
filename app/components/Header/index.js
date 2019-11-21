@@ -9,22 +9,27 @@ import Banner from './event.jpg';
 import messages from './messages';
 
 function Header() {
+  
   return (
     <div>
       <A href="/">
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
+
       <NavBar>
+
         <HeaderLink to="/" >
           <FormattedMessage {...messages.home} />
         </HeaderLink>
+
         <HeaderLink to="/SignIn">
           <FormattedMessage {...messages.SignIn} />
         </HeaderLink>
-	<HeaderLink to="/Register">
-          <FormattedMessage {...messages.Register} />
 
+        <HeaderLink to="/SignUp">
+          <FormattedMessage {...messages.SignUp} />
         </HeaderLink>
+
         <HeaderLink to="/Category">
           <FormattedMessage {...messages.Category} />
         </HeaderLink>
@@ -54,7 +59,3 @@ export default Header;
           }}
         ///>
       </section>*/
-
-
-
-
