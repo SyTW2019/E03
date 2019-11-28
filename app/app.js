@@ -19,7 +19,6 @@ import 'sanitize.css/sanitize.css';
 
 // Import root app
 import App from 'containers/App';
-import HomePage from 'containers/HomePage';
 
 // Import Language Provider
 import LanguageProvider from 'containers/LanguageProvider';
