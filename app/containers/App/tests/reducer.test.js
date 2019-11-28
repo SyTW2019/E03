@@ -13,6 +13,9 @@ describe('appReducer', () => {
       currentUser: false,
       userData: {
         repositories: false,
+        email:null,
+        name:null,
+        password:null,
       },
     };
   });

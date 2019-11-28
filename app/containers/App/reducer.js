@@ -17,6 +17,7 @@ export const initialState = {
   error: false,
   currentUser: false,
   userData: {
+    repositories: false,
     name: null,
     email: null,
     password: null,

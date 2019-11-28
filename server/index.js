@@ -54,18 +54,18 @@ db.once('open', function () {
     next();
   });
 
-  app.use(express.urlencoded({extended:true}))
+  app.use(express.urlencoded({ extended: true }))
   app.use(express.json())
   app.post('/usuario', (req, res, next) => {
     console.log(req.body)
-    var nuevoUsuario = new user ({
+    var nuevoUsuario = new user({
       _id: new mongoose.Types.ObjectId(),
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
     })
-    nuevoUsuario.save(function(err){
-      if(err)throw err;
+    nuevoUsuario.save(function (err) {
+      if (err) throw err;
       console.log(`Usuario ${nuevoUsuario.name} guardado con exito`)
     })
     res.send('recibido')
