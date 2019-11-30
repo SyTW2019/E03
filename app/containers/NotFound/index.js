@@ -6,7 +6,7 @@ export default function NotFound() {
   
   return(
     <div>
-    <img src={PageNotFound} style={{display: 'block', margin: 'auto', position: 'relative' }} />
+    <img src={PageNotFound} style={{display: 'block', margin: 'auto', position: 'relative' }} alt="Error, página no encontrada" />
     </div>
   );
 }
