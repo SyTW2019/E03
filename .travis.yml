@@ -13,4 +13,4 @@ deploy:
   domain: sytw.surge.sh
   project: ./build/
 on:
-  branch: master
+  branch: travis
