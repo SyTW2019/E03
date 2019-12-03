@@ -14,4 +14,8 @@ deploy:
   project: ./build/
 on:
   branch: travis
-  
+notifications:
+  slack: sytwespacio:NiLTh9U7xaJJUdSzAl4mMhz2
+    on_pull_requests: false
+    on_success: always
+    
