@@ -15,5 +15,6 @@ deploy:
 on:
   branch: travis
 notifications:
-  slack: sytw:zOwATE9j5xq2yo6Jqb8y6YtR:#03
+  slack: 'sytw:zOwATE9j5xq2yo6Jqb8y6YtR#03'
   on_succes: always
+  
