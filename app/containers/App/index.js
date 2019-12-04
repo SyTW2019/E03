@@ -25,11 +25,12 @@ import Card from '../PaginaPrincipal';
 import InicioSesion from '../InicioSesion';
 import Categoria from '../Categorias';
 import NotFound from '../NotFound';
-
+import { IntlProvider } from 'react-intl'
 
 export default function App() {
 
   return (
+<<<<<<< HEAD
     <Router>
       <Header/>
       <Switch>
@@ -41,6 +42,21 @@ export default function App() {
       </Switch>
       <Footer/>
     </Router>
+=======
+    <IntlProvider locale="en">
+      <Router>
+        <Header/>
+        <Switch>
+          <Route exact path='/' Component={Card}><Card/></Route>
+          <Route path='/SignUp' Component={Registro}><Registro/></Route>
+          <Route path='/SignIn' Component={Inicio}><Inicio/></Route>
+          <Route path='/Category' Component={Categoria}><Categoria/></Route>
+          <Route path="*" component={NotFound}><NotFound/></Route>
+        </Switch>
+        <Footer/>
+      </Router>
+    </IntlProvider>
+>>>>>>> cf5d81a627911a0c60a4d98df0745611eb73e33b
   );
 }
 
