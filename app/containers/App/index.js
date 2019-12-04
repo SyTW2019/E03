@@ -30,7 +30,7 @@ import { IntlProvider } from 'react-intl'
 export default function App() {
 
   return (
-<<<<<<< HEAD
+
     <Router>
       <Header/>
       <Switch>
@@ -42,8 +42,7 @@ export default function App() {
       </Switch>
       <Footer/>
     </Router>
-=======
-    <IntlProvider locale="en">
+ /*   <IntlProvider locale="en">
       <Router>
         <Header/>
         <Switch>
@@ -55,8 +54,8 @@ export default function App() {
         </Switch>
         <Footer/>
       </Router>
-    </IntlProvider>
->>>>>>> cf5d81a627911a0c60a4d98df0745611eb73e33b
+    </IntlProvider>*/
+
   );
 }
 
