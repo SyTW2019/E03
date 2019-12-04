@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: sytw.surge.sh
+  project: ./build/
+on:
+  branch: travis
+notifications:
+  slack: 'sytw:zOwATE9j5xq2yo6Jqb8y6YtR#03'
+  on_succes: always
+  
