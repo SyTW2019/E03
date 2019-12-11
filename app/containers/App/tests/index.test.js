@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { render, cleanup } from 'react-testing-library';
 import "jest-dom/extend-expect";
 import Registro from '../../Registro'
-import Card from '../../PaginaPrincipal';
-import Inicio from '../../InicioSesion';
+import Inicio from '../../PaginaPrincipal';
+import InicioSesion from '../../InicioSesion';
 import Categoria from '../../Categorias';
 import NotFound from '../../NotFound';
 import Footer from '../../../components/Footer';
@@ -28,7 +28,7 @@ describe('<App />', () => {
   });
 
   it('should render an Card component', () => {
-    const { container } = render(<Card />);
+    const { container } = render(<Inicio />);
     expect(container).not.toBeNull();
   });
 
@@ -38,7 +38,7 @@ describe('<App />', () => {
   });
 
   it('should render an Inicio component', () => {
-    const { container } = render(<Inicio />);
+    const { container } = render(<InicioSesion />);
     expect(container).not.toBeNull();
   });
 

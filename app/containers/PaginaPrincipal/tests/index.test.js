@@ -5,15 +5,15 @@ import "jest-dom/extend-expect";
 import renderer from "react-test-renderer";
 
 import Card from '../../../components/Card/index'
-import Registro from '../index'
+import Inicio from '../index'
 
-describe('<Registro />', () => {
+describe('<PaginaPrincipal />', () => {
 
   afterEach(cleanup);
 
   it('render', () => {
       const div = document.createElement(div);
-      ReactDOM.render(<Registro/>,div);
+      ReactDOM.render(<Inicio/>,div);
   });
 
   it('should render an Card component', () => {
@@ -22,7 +22,7 @@ describe('<Registro />', () => {
   });
 
   it('Matches snapshots', () => {
-    const tree = renderer.create(<Registro title="save"/>).toJSON();
+    const tree = renderer.create(<Inicio title="save"/>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

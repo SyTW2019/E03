@@ -2,40 +2,31 @@
 
 exports[`<App /> should render and match the snapshot 1`] = `
 <BrowserRouter>
-  <Header />
-  <Switch>
-    <Route
-      Component={[Function]}
-      exact={true}
-      path="/"
-    >
-      <Registro />
-    </Route>
-    <Route
-      Component={[Function]}
-      path="/SignUp"
-    >
-      <Registro />
-    </Route>
-    <Route
-      Component={[Function]}
-      path="/SignIn"
-    >
-      <InicioSesion />
-    </Route>
-    <Route
-      Component={[Function]}
-      path="/Category"
-    >
-      <Categoria />
-    </Route>
-    <Route
-      component={[Function]}
-      path="*"
-    >
-      <NotFound />
-    </Route>
-  </Switch>
-  <Footer />
+  <div>
+    <Header />
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/SignUp"
+      />
+      <Route
+        component={[Function]}
+        path="/SignIn"
+      />
+      <Route
+        component={[Function]}
+        path="/Category"
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+    <Footer />
+  </div>
 </BrowserRouter>
 `;

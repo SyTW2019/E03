@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Registro /> Matches snapshots 1`] = `
+exports[`<PaginaPrincipal /> Matches snapshots 1`] = `
 <main
   className="MuiContainer-root MuiContainer-maxWidthXs"
 >

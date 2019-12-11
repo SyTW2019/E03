@@ -112,7 +112,7 @@ class SignUp extends React.Component {
                                 <H3 title="Introduzca su email" />
                                 <TextField
                                     name="email"
-                                    type="text"
+                                    type="email"
                                     variant="outlined"
                                     required
                                     fullWidth
