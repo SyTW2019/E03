@@ -16,3 +16,4 @@ true:
   branch: master
 notifications:
   slack: sytw:8yV3PfEuO2u2TiO6zEf3d63m
+  
