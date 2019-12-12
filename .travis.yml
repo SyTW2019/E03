@@ -9,7 +9,7 @@ script:
 deploy:
   provider: surge
   cleanup: true
-  domain: "sytw.surge.sh"
+  domain: "<my_name_here>.surge.sh"
   project: "./build/"
 on:
   branch: master
