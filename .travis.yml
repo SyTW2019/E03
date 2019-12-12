@@ -9,10 +9,10 @@ script:
 - npm run build
 deploy:
   provider: surge
-  skip_cleanup: true
+  cleanup: true
   domain: sytw.surge.sh
   project: "./build/"
-true:
+on:
   branch: master
 notifications:
   slack:
