@@ -11,7 +11,7 @@ deploy:
   provider: surge
   cleanup: true
   domain: "sytw.surge.sh"
-  project: ""./build/""
+  project: "./build/"
 on:
   branch: master
 notifications:
