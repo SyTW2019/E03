@@ -7,6 +7,7 @@
  */
 
 import React, { Component } from 'react';
+import { IntlProvider } from 'react-intl';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
