@@ -15,7 +15,4 @@ deploy:
 true:
   branch: master
 notifications:
-  slack:
-    rooms:
-      secure: Vh9+vdE8KvCm2Qr+w3XozJeSqflLFzFcN2W1M21d8pq34N+SKGQNEpsk8lJnEmW3OEEr7X/u8o3ISKLozu/MVJcyBxy8iRVUw1JK9TPk+jSpGtl1TH0xdl9wx163HsDSPu0f5yjpjqy4i/IYyxDuLqPCvJQks1bBx2dVhNGIb7xLyhel/eeg5hou99TzfgkuxLkFWU0MbBkVWVUKx7Zj0qF0UlLCp9xuaDjJhfwjX4PfU9UAZt6LmTDdgsveoKPpK1tXYMsGFS6ESXzrs1mcyyICSRubi7hGUYBTX1lkusQEUwotTU8rwGJhzjtkI+z0pAeLUXtHc5j2/Q89KhgnP8R3yQp9++Pa0itO4C8MB2C4RpL58BOG9RaJ5A0BeHTZiWpVtdPfEJlyEqSJhgUdrZokPr2cz9srWWC4ZR0nvXcxOwMTuptdI7P5WydbWrMFyCyBSLJS25rp5yfEN8tr/TTAtyFpwTjZDHPrG6/2XCJWtUtSd/uTKVUV9mCA+u/fpN8hzJCMaSkgP8p2Ugt/In50n+vnMsuB3N89tkpae+ZAfwcfQ3ivhOOj4UUfxTWx5hsG/b73FIYRe04t4VqaJD77mmYPPQjJFxzOgxNbeLsl+w634FqMWbUJ2Iryq2E1+f/AIIMrobThOoSuup16wfrhGfOY8V0sv64Mvi2AbsY=
-      on_failure: always
+  slack: sytw:8yV3PfEuO2u2TiO6zEf3d63m
