@@ -13,7 +13,7 @@ deploy:
   domain: sytw.surge.sh
   project: "./build/"
 true:
-  branch: travis
+  branch: master
 notifications:
   slack:
     matrix:
