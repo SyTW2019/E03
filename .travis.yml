@@ -10,8 +10,8 @@ script:
 deploy:
   provider: surge
   skip_cleanup: true
-  domain: sytw.surge.sh
-  project: ./build/
+  domain: "<my_name_here>.surge.sh"
+  project: ""./build/""
 true:
   branch: master
 notifications:
