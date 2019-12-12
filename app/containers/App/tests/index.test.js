@@ -37,10 +37,10 @@ describe('<App />', () => {
     expect(container).not.toBeNull();
   });
 
-  it('should render an Inicio component', () => {
-    const { container } = render(<InicioSesion />);
-    expect(container).not.toBeNull();
-  });
+  // it('should render an Inicio component', () => {
+  //   const { container } = render(<InicioSesion />);
+  //   expect(container).not.toBeNull();
+  // });
 
   it('should render an Categoria component', () => {
     const { container } = render(<Categoria />);
