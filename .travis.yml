@@ -6,18 +6,17 @@ cache:
   - node_modules
 script:
 - npm test
+- npm run build
 deploy:
   provider: surge
-  cleanup: true
-  domain: "<my_name_here>.surge.sh"
+  skip_cleanup: true
+  domain: sytw.surge.sh
   project: "./build/"
-on:
+true:
   branch: master
 notifications:
   slack:
-    matrix:
-    - sytw:zOwATE9j5xq2yo6Jqb8y6YtR#2019-e03
     rooms:
-      secure: NOeYFVqJYv6oVBS0SPWr1dkds5PIsXcdTnzQ4LXBoQFW/O9HuJbDauFIe4mUKvJ82sK4/mmOrR5YTTCOGvcPGcnSai/RnqVhdxIWD5bZ5581JBEFEfAVLmk/b/bgLFLQF7x5/4VQUH+MmRCxkNRjMIJ59XBZ89ai2sKILR+eI9iyvPSXhUdaH3GjT/cs99lPNJDSCz7ht9hHiNcaapcB8pENizE/MJwVogdiRPkEh0uXfwKaB0Aow109idmTeKROhNy32Fs7eoDjlDMl+Io9FXHzOhSOrjXL6Idbf4Jsdbvb9LjVVhwSf/PlGpH3HSRMW4ce6/p2wFDVtLK68FgTN+mPJL8G9JrPsstmtFxxRH6SeUVjI0T3C8zZ89K4LnA3iMNaOKCUK7wBq17oPvm/SvEX4vqKWk86U9xgf8dR1yQBJDUJ3vGszrgmvvQ199rTCiJzMXki9oQetVL3NJv9mCF2pXyPQ4+C0ihYQNEgCUWW45OHORvgLYkpn2yISJdBMnq8xME+eSsCTsH/J/t053MAf0I4gDbndr3cSOBSjK7esHquK1I34RhO92xMSouEVhEOvy4hs9uuFuHhciR8oBvMqC1kjF3GaamILCp7TG6aCLP0xkXdZ4FPfxIL8RmSTJjx4/wQDCbCbCUWKzEXnlzzfEAPiluouM9/t227jDI=
-  on_success: always
-  on_failure: always
+      secure: G0VwHW05+jLaelGFM/XeS1T6mkTVLcScCp+8/5TlawSaCjPsKiF0AYlUIpKjwb8w4JImA5U1ktQEWgKMwXQapFRO6GodEyWFAf/9R56bNC2JF52KxOUadONqofkVaiewXokucUUtQ0CstN+YvPL5/ajDpXTkVstcd762cB3rGA3ZYC9BAJ31Diq4cytjxXi9wekXGub4obKWKBQFnY6uWYDqGOG7+0+2ufza1NAFtOEGmyM+xCj1vbpyzEf9cVYVehsxJtGrQ8mVHnf/BzykL2aul7dSsaFKtVOAS0ZhN7JGs229/Q/aRJE8BoKgk3VOMygywk1M6OZvVYu3BAHHnPvFDaZGkAJUHq5cyi/zOxUBl3jQ23akLAeJTikIxv9mWt2PLsAUHmUeK2ttnlzxPHDhpRqiOz5D6GSDlv7hHxoSbSUE6HKYccIDBCbhs1MpelaDOK9/CgCarCksYnFKUyDxCGI5Dz0EBtdMrj8mfx6qGKlH+VyQPo2XXDW344vWz3KmpLbtk1Eptm5ke6KB3EB6ldvhly80LnRLiFPfWyokQNtvucpPi8sKYezj4+NFxwTiEfOuRXO+pUYUg9yv8Tr5wjuqH8owAiwTtc0RCzTkMuP0oUY+NP8oXQFCsvbGgADr2hq0jSmQzaTUFFz+SQMPBtctLOgeiMJkX4L7LeY=
+    on_success: always
+    on_failure: always
