@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
-import { PrivateRoute } from '../_components';
+import { PrivateRoute } from '../_components/PrivateRoute';
 import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
-import ImgMediaCard  from '../PaginaPrincipal/';
-import Categoria from '../containers/Categorias';
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import { PaginaPrincipal } from '../PaginaPrincipal';
+import Categoria from '../Categorias';
+import Footer from '../_components/Footer'
+import Header from '../_components/Header'
 
 class App extends React.Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class App extends React.Component {
                         <div> 
                             <Header />
                             <Switch>
-                                <Route exact path="/" component={ImgMediaCard} />
+                                <Route exact path="/" component={PaginaPrincipal} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
                                 <Route path="/categoria" component={Categoria} />
