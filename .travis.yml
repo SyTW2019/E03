@@ -5,7 +5,8 @@ cache:
   directories:
   - node_modules
 script:
-- sonar-scanner 
+- mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report
+- if [ "$JAVA_HOME" = "/usr/lib/jvm/java-1.8.0-openjdk-amd64" ]; then mvn sonar:sonar; fi
 - npm test
 - npm run build
 deploy:
