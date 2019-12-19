@@ -22,4 +22,4 @@ addons:
   sonarcloud:
     organization: "sytw2019" # the key of the org you chose at step #3
     token:
-      secure: f7d0e00449443da5ce4731dbdde8896a57849bed
+      secure: ${sqtoken}
