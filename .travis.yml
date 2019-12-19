@@ -7,7 +7,7 @@ cache:
 script:
 - npm test
 - npm run build
-- bash sonar.sh
+- sonar-scanner 
 deploy:
   provider: surge
   cleanup: true
