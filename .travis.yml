@@ -6,7 +6,7 @@ cache:
   directories:
   - node_modules
 script:
-- sonar-scanner -X
+- sonar-runner -X
 - npm test
 - npm run build
 deploy:
