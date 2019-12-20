@@ -7,11 +7,9 @@ node_js:
 cache:
   directories:
   - node_modules
-before_script: 
-- pip install
-- pip install -r requirements.txt
+after_success:
+  - ./bin/codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
 script:
-- py.test  --cov-report term --cov=app/test/
 - sonar-scanner
 - npm test
 - npm run build
