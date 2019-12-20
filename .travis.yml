@@ -8,6 +8,7 @@ cache:
   directories:
   - node_modules
 script:
+- pip install --upgrade pip
 - py.test  --cov-report term --cov=app/test/
 - sonar-scanner
 - npm test
