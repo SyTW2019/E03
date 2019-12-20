@@ -2,12 +2,13 @@ language: node_js
 dist: trusty
 node_js:
 - stable
+install:
+  - npm install -g codecov
 cache:
   directories:
   - node_modules
-after_success:
-  - ./bin/codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
 script:
+- codecov
 - sonar-scanner
 - npm test
 - npm run build
