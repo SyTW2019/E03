@@ -13,8 +13,6 @@ script:
 - sonar-scanner
 - npm test
 - npm run build
-after_success:
-    - codecov
 deploy:
   provider: surge
   cleanup: true
