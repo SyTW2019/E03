@@ -8,7 +8,7 @@ cache:
   directories:
   - node_modules
 before_script: 
-- easy_install distribute
+- pip install
 - pip install -r requirements.txt
 script:
 - py.test  --cov-report term --cov=app/test/
