@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import {IntlProvider} from 'react-intl';
 import { history } from '../_helpers';
 import { alertActions } from '../_actions';
 import { PrivateRoute } from '../_components/PrivateRoute';
@@ -10,8 +10,8 @@ import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { PaginaPrincipal } from '../PaginaPrincipal';
 import Categoria from '../Categorias';
-import Footer from '../_components/Footer'
 import Header from '../_components/Header'
+import Footer from '../_components/Footer'
 
 class App extends React.Component {
     constructor(props) {
@@ -26,6 +26,7 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
+            <IntlProvider locale="en">
             <div className="jumbotron">
                 <div className="container">
                     <div className="col-sm-8 col-sm-offset-2">
@@ -48,8 +49,9 @@ class App extends React.Component {
                         </Router>
                     </div>
                 </div>
-                <Footer />
+               <Footer />
             </div>
+            </IntlProvider>
         );
     }
 }
