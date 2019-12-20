@@ -22,5 +22,5 @@ notifications:
 addons:
   sonarcloud:
     organization: "sytw2019" # the key of the org you chose at step #3
-    token:
+    token: 
       secure: ${sqtoken}
