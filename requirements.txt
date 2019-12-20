@@ -26,7 +26,7 @@ olefile==0.45.1
 ortools==7.3.7083
 packaging==19.2
 pathlib2==2.3.5
-Pillow==5.1.0
+Pillow==6.2.0
 pluggy==0.13.1
 protobuf==3.11.1
 py==1.8.0
