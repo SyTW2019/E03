@@ -9,7 +9,6 @@ cache:
   - node_modules
 script:
 - codecov
-- istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 - sonar-scanner
 - npm test
 - npm run build
@@ -28,3 +27,8 @@ addons:
     organization: "sytw2019" 
     token: 
       secure: ${sqtoken}
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
+
+#fa45f1e6935548b8b9cbdfa0f05c0a52 token codecov
