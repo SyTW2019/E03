@@ -1,5 +1,5 @@
-codecov:
-  token: fa45f1e6935548b8b9cbdfa0f05c0a52
+#codecov:
+#  token: fa45f1e6935548b8b9cbdfa0f05c0a52
 #  ci:
  #   - travis.com
  # require_ci_to_pass: yes
