@@ -37,5 +37,5 @@ comment:
   behavior: default
   require_changes: no
 
-  
-
+fixes:
+  - "io/github/SyTW2019/E03::src/main/io.github.SyTW2019.E03"
