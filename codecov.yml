@@ -12,7 +12,7 @@
 #    wait_for_ci: yes
 codecov:
   require_ci_to_pass: yes
-  branch: stable
+  branch: master
 
 coverage:
   precision: 2
