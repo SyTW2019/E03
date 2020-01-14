@@ -10,7 +10,7 @@ cache:
 script:
 - codecov
 - sonar-scanner
-- npm test
+- npm run test:ci
 - npm run build
 deploy:
   provider: surge
