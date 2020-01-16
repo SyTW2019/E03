@@ -3,11 +3,14 @@ dist: trusty
 node_js:
 - stable
 install:
+  - npm install
   - npm install -g codecov
 cache:
   directories:
   - node_modules
+  - npm
 script:
+- istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
 - codecov
 - sonar-scanner
 - npm run test
@@ -28,7 +31,7 @@ addons:
     token: 
       secure: ${sqtoken}
 
-after_success:
-    - bash <(curl -s https://codecov.io/bash)
+#after_success:
+ #   - bash <(curl -s https://codecov.io/bash)
 
 #fa45f1e6935548b8b9cbdfa0f05c0a52 token codecov

@@ -15,9 +15,9 @@ codecov:
   branch: master
 
 coverage:
-  precision: 2
+  precision: 3
   round: down
-  range: "70...100"
+  range: "0...100"
 
   status:
     project: yes
