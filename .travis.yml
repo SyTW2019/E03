@@ -5,13 +5,11 @@ node_js:
 install:
   - npm install
   - npm install -g codecov
-  - cd istanbul-mocha && npm install && cd ..
 cache:
   directories:
   - node_modules
   - npm
 script:
-- cd istanbul-mocha && npm test
 - codecov
 - sonar-scanner
 - npm run test
