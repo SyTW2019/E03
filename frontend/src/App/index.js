@@ -28,25 +28,27 @@ class App extends React.Component {
         return (
             <IntlProvider locale="en">
                 <div>
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
-                        <Router history={history}>
-                        <div> 
-                            <Header />
-                            <Switch>
-                                <Route exact path="/" component={PaginaPrincipal} />
-                                <Route path="/login" component={LoginPage} />
-                                <Route path="/register" component={RegisterPage} />
-                                <Route path="/categoria" component={Categoria} />
-                                <PrivateRoute exact path="/home_user" component={HomePage} />
-                                <Redirect from="*" to="/" />
-                            </Switch>
-                            
-                        </div>
-                        </Router>
-               <Footer />
-            </div>
+                    {alert.message &&
+                        <div className={`alert ${alert.type}`}>{alert.message}</div>
+                    }
+                    <Router history={history}>
+                    <div> 
+                        <Header />
+                        <Switch>
+                            <Route exact path="/" component={PaginaPrincipal} />
+                            <Route path="/login" component={LoginPage} />
+                            <Route path="/register" component={RegisterPage} />
+                            <Route path="/categoria" component={Categoria} />
+                            <PrivateRoute exact path="/home_user" component={HomePage} />
+                            <Redirect from="*" to="/" />
+                        </Switch>
+                        
+                    </div>
+                    </Router>
+                    <div class="fixed-bottom">
+                        <Footer />
+                    </div>
+                </div>
             </IntlProvider>
         );
     }
