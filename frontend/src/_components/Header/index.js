@@ -1,8 +1,5 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-import A from './A';
-import Img from './Img';
 import NavBar from './NavBar';
 import HeaderLink from './HeaderLink';
 import messages from './messages';
@@ -10,30 +7,38 @@ import messages from './messages';
 function Header() {
   
   return (
-    <div>
-      <A href="images/logo.png">
-        <Img src="images/event.jpg" alt="react-boilerplate - Logo" />
-      </A>
-      
-      <NavBar>
+    <div class="d-flex border-bottom mb-5 mt-2 align-items-center">
 
-        <HeaderLink to="/" >
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
+      <div class="bd-highlight justify-content-start ml-4 mr-2">
 
-        <HeaderLink to="/login">
-          <FormattedMessage {...messages.SignIn} />
-        </HeaderLink>
+          <img src="../../../images/logo.png" alt="logo" class="img-responsive img-fluid" 
+                height="90" width="90"/>
 
-        <HeaderLink to="/register">
-          <FormattedMessage {...messages.SignUp} />
-        </HeaderLink>
+      </div>
 
-        <HeaderLink to="/categoria">
-          <FormattedMessage {...messages.Category} />
-        </HeaderLink>
+      <div class="p-2 bd-highlight">
 
-      </NavBar>
+        <NavBar>
+
+          <HeaderLink to="/" >
+            <FormattedMessage {...messages.home} />
+          </HeaderLink>
+
+          <HeaderLink to="/login">
+            <FormattedMessage {...messages.SignIn} />
+          </HeaderLink>
+
+          <HeaderLink to="/register">
+            <FormattedMessage {...messages.SignUp} />
+          </HeaderLink>
+
+          <HeaderLink to="/categoria">
+            <FormattedMessage {...messages.Category} />
+          </HeaderLink>
+
+        </NavBar>
+
+      </div>
     
     </div>
   );
