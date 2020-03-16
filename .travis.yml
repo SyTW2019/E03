@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- stable
+cache:
+  directories:
+  - node_modules
+script:
+- npm test
+- npm run build
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: sytw.surge.sh
+  project: "./build/"
+true:
+  branch: master
+notifications:
+  slack:
+    matrix:
+    - sytw:zOwATE9j5xq2yo6Jqb8y6YtR#03
+    rooms:
+      secure: NOeYFVqJYv6oVBS0SPWr1dkds5PIsXcdTnzQ4LXBoQFW/O9HuJbDauFIe4mUKvJ82sK4/mmOrR5YTTCOGvcPGcnSai/RnqVhdxIWD5bZ5581JBEFEfAVLmk/b/bgLFLQF7x5/4VQUH+MmRCxkNRjMIJ59XBZ89ai2sKILR+eI9iyvPSXhUdaH3GjT/cs99lPNJDSCz7ht9hHiNcaapcB8pENizE/MJwVogdiRPkEh0uXfwKaB0Aow109idmTeKROhNy32Fs7eoDjlDMl+Io9FXHzOhSOrjXL6Idbf4Jsdbvb9LjVVhwSf/PlGpH3HSRMW4ce6/p2wFDVtLK68FgTN+mPJL8G9JrPsstmtFxxRH6SeUVjI0T3C8zZ89K4LnA3iMNaOKCUK7wBq17oPvm/SvEX4vqKWk86U9xgf8dR1yQBJDUJ3vGszrgmvvQ199rTCiJzMXki9oQetVL3NJv9mCF2pXyPQ4+C0ihYQNEgCUWW45OHORvgLYkpn2yISJdBMnq8xME+eSsCTsH/J/t053MAf0I4gDbndr3cSOBSjK7esHquK1I34RhO92xMSouEVhEOvy4hs9uuFuHhciR8oBvMqC1kjF3GaamILCp7TG6aCLP0xkXdZ4FPfxIL8RmSTJjx4/wQDCbCbCUWKzEXnlzzfEAPiluouM9/t227jDI=
+  on_succes: always
