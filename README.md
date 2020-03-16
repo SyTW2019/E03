@@ -1,5 +1,5 @@
-# EventFinder
-[![Build Status](https://travis-ci.com/SyTW2019/E03.svg?branch=master)](https://travis-ci.com/SyTW2019/E03)
+# EventFinder [![Build Status](https://travis-ci.com/SyTW2019/E03.svg?branch=master)](https://travis-ci.com/SyTW2019/E03)
+
 ## Grupo E03
 
 Somos un grupo de la Universidad de La Laguna formado por:
