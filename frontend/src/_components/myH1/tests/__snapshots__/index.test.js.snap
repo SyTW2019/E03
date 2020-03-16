@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<H1 /> Matches snapshots 1`] = `
-<h1
-  data-testid="h1"
->
-  save
-</h1>
-`;

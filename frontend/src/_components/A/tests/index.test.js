@@ -3,9 +3,21 @@
  */
 
 import React from 'react';
+import jsdom from 'jsdom';
 import { render } from '@testing-library/react';
+import Adapter from 'enzyme-adapter-react-16';
+import { configure } from 'enzyme';
 
 import A from '../index';
+
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
 
 const href = 'http://mxstbr.com/';
 const children = <h1>Test</h1>;

@@ -1,11 +1,21 @@
 import React from 'react';
+import jsdom from 'jsdom';
 import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
-import "jest-dom/extend-expect";
 import renderer from "react-test-renderer";
-import { mount } from 'enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import Input from '../index';
+
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
 
 const name='Prueba';
 const type='otraPrueba';
