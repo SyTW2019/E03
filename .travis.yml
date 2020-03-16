@@ -5,13 +5,14 @@ cache:
   directories:
   - node_modules
 script:
+- cd frontend
 - npm test
 - npm run build
 deploy:
   provider: surge
   skip_cleanup: true
   domain: sytw.surge.sh
-  project: "./build/"
+  project: "./frontend/"
 true:
   branch: master
 notifications:
