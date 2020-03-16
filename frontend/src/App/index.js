@@ -45,7 +45,7 @@ class App extends React.Component {
                         
                     </div>
                     </Router>
-                    <div class="fixed-bottom">
+                    <div class="fixed-bottom mb-3">
                         <Footer />
                     </div>
                 </div>
