@@ -3,9 +3,21 @@
  */
 
 import React from 'react';
-import { fireEvent, render } from 'react-testing-library';
+import jsdom from 'jsdom';
+import { fireEvent, render } from '@testing-library/react';
+import Adapter from 'enzyme-adapter-react-16';
+import { configure } from 'enzyme';
 
 import Button from '../index';
+
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
 
 const handleRoute = () => {};
 const href = 'http://mxstbr.com';

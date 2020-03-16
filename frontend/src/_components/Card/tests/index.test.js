@@ -1,23 +1,24 @@
+import jsdom from 'jsdom'
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { render, cleanup } from 'react-testing-library';
-import "jest-dom/extend-expect";
-import renderer from "react-test-renderer";
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import Card from '../index'
 
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
+
 describe('<Card />', () => {
-
-    afterEach(cleanup);
-
-    it('render', () => {
-        const div = document.createElement(div);
-        ReactDOM.render(<Card/>,div);
-    });
-
-    it('Matches snapshots', () => {
-        const tree = renderer.create(<Card title="save"/>).toJSON();
-        expect(tree).toMatchSnapshot();
+    test('Comprobar que se renderiza Card', () => {
+        const wrapper = mount(
+            <Card src="images/book.jpg"/>
+        );
+        expect(wrapper.find(Card)).toHaveLength(1);
       });
-
 });

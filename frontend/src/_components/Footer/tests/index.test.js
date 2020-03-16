@@ -1,30 +1,24 @@
+import jsdom from 'jsdom'
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { IntlProvider } from 'react-intl';
-import { Provider } from 'react-redux';
-import { browserHistory } from 'react-router-dom';
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import Footer from '../index';
-import configureStore from '../../../configureStore';
+
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
 
 describe('<Footer />', () => {
-  let store;
-
-  beforeAll(() => {
-    store = configureStore({}, browserHistory);
-  });
-
-  it('should render and match the snapshot', () => {
-    const renderedComponent = renderer
-      .create(
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <Footer />
-          </IntlProvider>
-        </Provider>,
-      )
-      .toJSON();
-
-    expect(renderedComponent).toMatchSnapshot();
+  test('Comprobar que se renderiza Footer', () => {
+    const wrapper = mount(
+        <Footer/>
+    );
+    expect(wrapper.find(Footer)).toHaveLength(1);
   });
 });

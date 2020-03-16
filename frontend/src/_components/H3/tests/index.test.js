@@ -1,20 +1,25 @@
+import jsdom from 'jsdom'
 import React from 'react';
-import { render } from 'react-testing-library';
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import H3 from '../index';
 
-describe('<H3 />', () => {
-  it('should render a prop', () => {
-    const id = 'testId';
-    const { container } = render(<H3 id={id} />);
-    expect(container.querySelector('h3').id).toEqual(id);
-  });
+configure({ adapter: new Adapter() })
 
-  it('should render its text', () => {
-    const children = 'Text';
-    const { container, queryByText } = render(<H3>{children}</H3>);
-    const { childNodes } = container.querySelector('h3');
-    expect(childNodes).toHaveLength(1);
-    expect(queryByText(children)).not.toBeNull();
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
+
+describe('<H3 />', () => {
+  test('Comprobar que se renderiza H3', () => {
+    const text='text'
+    const wrapper = mount(
+        <H3>{text}</H3>
+    );
+    expect(wrapper.find(H3)).toHaveLength(1);
   });
 });

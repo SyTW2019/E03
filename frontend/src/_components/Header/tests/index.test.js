@@ -1,24 +1,24 @@
+import jsdom from 'jsdom'
 import React from 'react';
-import { render } from 'react-testing-library';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router/immutable';
-import { createMemoryHistory } from 'history';
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import Header from '../index';
-import configureStore from '../../../configureStore';
+
+configure({ adapter: new Adapter() })
+
+const { JSDOM } = jsdom;
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = dom;
+
+global.window = window;
+global.document = window.document;
 
 describe('<Header />', () => {
-  const history = createMemoryHistory();
-  const store = configureStore({}, history);
-
-  it('should render a div', () => {
-    const { container } = render(
-      <Provider store={store}>
-          <ConnectedRouter history={history}>
-            <Header />
-          </ConnectedRouter>
-      </Provider>,
+  test('Comprobar que se renderiza Header', () => {
+    const wrapper = mount(
+        <Header/>
     );
-    expect(container.firstChild).toMatchSnapshot();
+    expect(wrapper.find(Header)).toHaveLength(1);
   });
 });
