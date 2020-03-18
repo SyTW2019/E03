@@ -1,4 +1,5 @@
-# EventFinder [![Build Status](https://travis-ci.com/SyTW2019/E03.svg?branch=master)](https://travis-ci.com/SyTW2019/E03)
+# EventFinder [![Build Status](https://travis-ci.com/SyTW2019/E03.svg?branch=master)](https://travis-ci.com/SyTW2019/E03) [![codecov](https://codecov.io/gh/SyTW2019/E03/branch/master/graph/badge.svg)](https://codecov.io/gh/SyTW2019/E03) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=SyTW2019_E03&metric=code_smells)](https://sonarcloud.io/dashboard?id=SyTW2019_E03)
+
 
 ## Nosotros
 
@@ -22,9 +23,9 @@ Además se ha integrado travis con de Slack de manera que una vez se realize el 
 
 ### SonarCloud
 
-Se creará un token usando los recursos ofrecidos por la documentación de SonarCloud, para ello:
+La herramienta de sonarcloud nos permite analizar la calidad del código que se crea de manera continua e integrada con el resto de servicios. Gracias a esta herramienta podremos analizar la duclicación del código así como las malas prácticas a la hora de escribirlo. Para el uso de ésta herramienta se realizan los siguientes pasos:
   
-  1. Se genera usando la semilla "sytwe03" en la plataforma que te habilita para ello el SonarCloud. 
+  1. Se genera un token usando los recursos ofrecidos por la documentación de SonarCloud. Se genera usando la semilla "sytwe03" en la plataforma que te habilita para ello el SonarCloud. 
   2. A continuación se ha de encriptar el token usando el comando  `travis encrypt token  --com`
   3. Se añade en el fichero de travis la información de dirección de la organización a la que se carga el proyecto, para ello se cargan las siguientes líneas
   
@@ -36,4 +37,19 @@ Se creará un token usando los recursos ofrecidos por la documentación de Sonar
       script:
         -sonar-scanner
   4. Se añade dentro del directorio de frontend el fichero de configuración del sonarCloud que se llama `sonar-project.properties`. Dentro de este fichero se ha de completado con los campos necesarios para la inicialización del servicio. 
+
+La cantidad de problemas en el código se puede visualizar en la propia banda que está disponible en el README del proyecto. 
   
+### Codecov
+
+La herramienta permite el análisis de la cantidad del código que está recogido y comprobado por las pruebas de manera que se tiene un control de la cantidad de código comprobado. Además te permite tener un porcentaje. Para la integración de dicha herramienta se ha de realizar los siguientes pasos: 
+
+  1. Instalar la herramienta de codecov y guardarla como dependencia de desarrollo para lo que se ha de ejecutar `npm install codecov --save-dev`
+  2. Se ha de añadir en los scripts del fichero de configuración de travis a continuación de la ejecución de los test la orden de `codecov`
+  3. Se ha de modificar el fichero package.json para que en la ejecución del script de test se ejecute `jest && codecov`
+  4. Se modificará el fichero de configuración de las pruebas de jest para que se almacenen los resultados del análisis de la herramienta. Para ello dentro de la configuración se añaden las siguientes líneas: 
+  
+    coverageDirectory: "./coverage",
+    collectCoverage: true,
+
+El resultado de la prueba se puede comprobar desde la propia banda de codecov visible en el README del proyecto. 
