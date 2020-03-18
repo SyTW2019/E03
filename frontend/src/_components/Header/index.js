@@ -32,10 +32,6 @@ function Header() {
             <FormattedMessage {...messages.SignUp} />
           </HeaderLink>
 
-          <HeaderLink to="/categoria">
-            <FormattedMessage {...messages.Category} />
-          </HeaderLink>
-
         </NavBar>
 
       </div>
@@ -63,10 +59,6 @@ export default Header;
 
         <HeaderLink to="/register">
           <FormattedMessage {...messages.SignUp} />
-        </HeaderLink>
-
-        <HeaderLink to="/categoria">
-          <FormattedMessage {...messages.Category} />
         </HeaderLink>
 
       </NavBar>
