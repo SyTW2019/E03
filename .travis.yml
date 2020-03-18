@@ -24,7 +24,7 @@ deploy:
   domain: sytw.surge.sh
   project: "./build/"
 true:
-  branch: sonarcloud
+  branch: diego
 notifications:
   slack:
     secure: iKpIDRL46XWkUPRQ8uGELUjW5OS133wZ54f3J/pOSPAL/1y8fsk4zhCEaNEdn53L6gIuLBxzsxG+ySLe1O8aZzDkFhqzluEKiIQuRiyY/C7jVYehRpBy8RDf8xgMaf5PA8bGBdxtYYmofobL2lMU6IrQT17xwsRCBGlIJmvQ7vOykPxmcdByOHR2enDJjkeUbe1Np+L+BUOeYSI602ie3h8SCLAnmM0iN7U6tnFsT6JTLYWjGR8sYN27+trq0VAhDeVui/ruX113o8+7mxwTbnZlQGdAjN709Ydpo2+AGolRpM9C/YpHrUOMOAfZyd64cqjuMEiD6I/WkUR9jn8j93FPax5vTYH44GYifWbfSKagwYcK6tPOzrrWq1hXoNj/JRL2ejdhkEhLfZx2RDS82/r8KD0vPR47MiKtdoAFvCPhBFxtE0DdQV/ZBA9Ak88ZP2LpAHcBsTHKDCA806TKnjzP+VHLNHVgGuELabT/HLu0peMk0PAY9FPzlZmkL/kWEb/Q6juq5HWmtFggs3bArc+AEDcZbXOvQ14G9MRkRVrXU0wNd1DhWSsaOjKTs+taHQUvoN+usxdGpD8uuNp4kAUQA8FwPDD4jyFGr053c2VbMywDhr8ZPKl5SCHcQ5LxflGoqxd4W56bXn0zNKv9oJTG5oqoV0irWqRVXWH6KWA=
