@@ -22,4 +22,18 @@ Además se ha integrado travis con de Slack de manera que una vez se realize el 
 
 ### SonarCloud
 
-Se creará un token usando los recursos ofrecidos por la documentación de SonarCloud, para ello se genera usando la semilla "sytwe03". 
+Se creará un token usando los recursos ofrecidos por la documentación de SonarCloud, para ello:
+  
+  1. Se genera usando la semilla "sytwe03" en la plataforma que te habilita para ello el SonarCloud. 
+  2. A continuación se ha de encriptar el token usando el comando  `travis encrypt token  --com`
+  3. Se añade en el fichero de travis la información de dirección de la organización a la que se carga el proyecto, para ello se cargan las siguientes líneas
+  
+    addons: 
+      sonarCloud:
+        organization: OrganizationKey
+        token: 
+          secure: "token"
+      script:
+        -sonar-scanner
+  4. Se añade dentro del directorio de frontend el fichero de configuración del sonarCloud que se llama `sonar-project.properties`. Dentro de este fichero se ha de completado con los campos necesarios para la inicialización del servicio. 
+  
