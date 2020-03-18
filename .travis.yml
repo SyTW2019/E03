@@ -3,6 +3,8 @@ node_js:
 - stable
 before_install:
 - cd frontend
+install: 
+- npm install -g codecov
 cache:
   directories:
   - node_modules
@@ -14,6 +16,7 @@ addons:
 script:
 - sonar-scanner
 - npm test
+- codecov
 - npm run build
 deploy:
   provider: surge
