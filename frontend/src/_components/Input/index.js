@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
 export default class Input extends React.Component {
-  render(){
-    return(
+  render() {
+    return (
       <div>
         <input
           data-testid="input"
@@ -11,8 +11,8 @@ export default class Input extends React.Component {
           type={this.props.type}
           value={this.props.value}
           onChange={this.props.onChange}
-          />
+        />
       </div>
-    );
+    )
   }
 }
