@@ -6,18 +6,18 @@ import messages from './messages'
 
 function Header() {
   return (
-    <div class="d-flex border-bottom mb-5 mt-2 align-items-center">
-      <div class="bd-highlight justify-content-start ml-4 mr-2">
+    <div className="d-flex border-bottom mb-5 mt-2 align-items-center">
+      <div className="bd-highlight justify-content-start ml-4 mr-2">
         <img
           src="../../../images/logo.png"
           alt="logo"
-          class="img-responsive img-fluid"
+          className="img-responsive img-fluid"
           height="90"
           width="90"
         />
       </div>
 
-      <div class="p-2 bd-highlight">
+      <div className="p-2 bd-highlight">
         <NavBar>
           <HeaderLink to="/">
             <FormattedMessage {...messages.home} />
