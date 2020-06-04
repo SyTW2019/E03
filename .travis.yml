@@ -20,7 +20,7 @@ deploy:
   provider: surge
   skip_cleanup: true
   domain: sytw.surge.sh
-  project: './build/'
+  project: './dist/'
 true:
   branch: master
 notifications:
