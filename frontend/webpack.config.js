@@ -27,4 +27,7 @@ module.exports = {
       apiUrl: 'http://localhost:4000',
     }),
   },
+  watchOptions: {
+    ignored: /node_modules/,
+  },
 }

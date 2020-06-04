@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Categoria /> Matches snapshots 1`] = `
-<h1
-  className="title"
->
-  Categorías
-</h1>
-`;
