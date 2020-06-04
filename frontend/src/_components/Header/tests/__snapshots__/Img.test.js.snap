@@ -3,7 +3,6 @@
 exports[`<Img /> should match the snapshot 1`] = `
 <img
   alt="test"
-  className="sc-bdVaJa kixey"
   src="http://example.com/test.jpg"
 />
 `;

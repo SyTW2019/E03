@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer'
 import Adapter from 'enzyme-adapter-react-16'
 import { configure } from 'enzyme'
 
-import A from '../A'
+import A from './../../A'
 
 configure({ adapter: new Adapter() })
 

@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer'
 import Adapter from 'enzyme-adapter-react-16'
 import { configure } from 'enzyme'
 
-import Img from '../Img'
+import Img from './../../Img'
 
 configure({ adapter: new Adapter() })
 
@@ -26,7 +26,7 @@ describe('<Img />', () => {
 
   it('should have a class attribute', () => {
     const { container } = render(
-      <Img src="http://example.com/test.jpg" alt="test" />
+      <Img src="http://example.com/test.jpg" alt="test" className="hola" />
     )
     expect(container.querySelector('img').hasAttribute('class')).toBe(true)
   })
