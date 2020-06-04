@@ -72,4 +72,8 @@ El resultado de la prueba se puede comprobar desde la propia banda de codecov vi
 
 ### Git
 
+Para la realización de los commits y seguir un estilo común se seguirá el estilo 'conventional commits'. Cuya guía se puede encontar en [convetional commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
 ### Código
+
+La elección de estilos se ha decidido que no se van a usar ';' excepto en los puntos donde sean necesarios, además de los espacios antes de los '{' y con la utilización de dos espacios para el indentado.
