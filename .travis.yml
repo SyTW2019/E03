@@ -19,8 +19,8 @@ script:
 deploy:
   provider: surge
   skip_cleanup: true
+  project: ./static/
   domain: eventfinder.surge.sh
-  project: '/home/travis/build/SyTW2019/E03/frontend'
 true:
   branch: master
 notifications:
