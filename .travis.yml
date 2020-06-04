@@ -19,7 +19,7 @@ script:
 deploy:
   provider: surge
   skip_cleanup: true
-  domain: sytw.surge.sh
+  domain: eventfinder.surge.sh
   project: './dist/'
 true:
   branch: master
