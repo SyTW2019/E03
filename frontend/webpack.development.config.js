@@ -1,7 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
@@ -10,10 +10,6 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: 'file-loader',
       },
     ],
   },

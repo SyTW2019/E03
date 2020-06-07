@@ -68,6 +68,8 @@ La herramienta permite el análisis de la cantidad del código que está recogid
 
 El resultado de la prueba se puede comprobar desde la propia banda de codecov visible en el README del proyecto.
 
+### Heroku
+
 ## Estilos
 
 ### Git

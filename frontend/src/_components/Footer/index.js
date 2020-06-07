@@ -3,7 +3,8 @@ import { FormattedMessage } from 'react-intl'
 
 import Wrapper from './Wrapper'
 import messages from './messages'
-
+import mail from '../../../images/correo.jpg'
+import github from '../../../images/github.png'
 function Footer() {
   return (
     <div className="d-flex border-top mt-4 align-items-center justify-content-around bg-light">
@@ -22,7 +23,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/github.png"
+            src={github}
             alt="logoGitHub"
             className="img-responsive img-fluid"
             height="30"
@@ -40,7 +41,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/correo.jpg"
+            src={mail}
             alt="logoCorreo"
             className="img-responsive img-fluid ml-1"
             height="15"
@@ -54,7 +55,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/correo.jpg"
+            src={mail}
             alt="logoCorreo"
             className="img-responsive img-fluid ml-1"
             height="15"
@@ -68,7 +69,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/correo.jpg"
+            src={mail}
             alt="logoCorreo"
             className="img-responsive img-fluid ml-1"
             height="15"
@@ -82,7 +83,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/correo.jpg"
+            src={mail}
             alt="logoCorreo"
             className="img-responsive img-fluid ml-1"
             height="15"
@@ -96,7 +97,7 @@ function Footer() {
 
         <div className="d-flex align-items-center">
           <img
-            src="../../../images/correo.jpg"
+            src={mail}
             alt="logoCorreo"
             className="img-responsive img-fluid ml-1"
             height="15"
