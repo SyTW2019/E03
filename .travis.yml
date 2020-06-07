@@ -17,16 +17,18 @@ script:
   - codecov
   - npm run build
 deploy:
-  provider: surge
-  skip_cleanup: true
-  project: './frontend/dist'
-  domain: eventfinder.surge.sh
-  on:
-    branch: master
-  provider: surge
+  - provider: surge
+    skip_cleanup: true
+    project: './frontend/dist'
+    domain: eventfinder.surge.sh
+    on:
+      branch: master
+  - provider: surge
   skip_cleanup: true
   project: './frontend/dist'
   domain: staggingfinder.surge.sh
+  on:
+    branch: dev
 
 notifications:
   slack:

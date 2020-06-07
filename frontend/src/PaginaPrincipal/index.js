@@ -22,7 +22,7 @@ export class PaginaPrincipal extends React.Component {
               <Card src={assets('/images/book.jpg')} />
             </Grid>
             <Grid item xs={12}>
-              <Card src="images/concierto.jpg" />
+              <Card src={assets('images/concierto.jpg')} />
             </Grid>
           </Grid>
         </div>
