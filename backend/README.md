@@ -11,3 +11,4 @@ Para realizar el despliegue se ha de ejecutar el siguiente comando desde la raí
     git subtree push --prefix backend heroku master
 
 https://jasonwatmore.com/post/2018/12/06/deploy-to-heroku-node-mongo-api-for-authentication-registration-and-user-management
+https://medium.com/@timanovsky/heroku-buildpack-to-support-deployment-from-subdirectory-e743c2c838dd
