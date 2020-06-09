@@ -23,8 +23,7 @@ deploy:
       secure: CRkGvAol1y8TvsQVQwYIvZG4EHl5ddV/p14jMiqD9j6cSPN3Cqc+5O0XAC3NvFLiCVwCCAKPnpI+75PT1ApcMypO6lv9/MxcUhx3/YED6nnamPXKcAXzCmG/xXwZBGetApY1pyg0ALYWWXWMhVGHwsVaX/rPB28w2ihHQaWtQbs2yhutCS1xKwqzDWDf/Azr+K6s2z252IjPWYZs1UVL6QZxwmu/6Eg2SM0cTW8dnRfbd/8uqIcSNkbjuSqbwBnb+g+CxEK2F8GVPTsfa/MfeMedBVlBRzvDrPr2bDXa9wqunzF9HQKw8ndvrH3B7ja/w5CUPtiOSsDn1QmU7x/Ao8v2dL/tXEpy8h+n50Uj/dv1GM1XCOKSZqgqSh7FoJX2hRRlNA68NkP83QumwpVXinN0Cx998Ajz/VJtWTGOGpAljwUcQ7TTY2GeJ4cPusQMqmsvaQyKzACba8wVSDSFHO8VMI0Bc0XDoCknHmmSBVWa0cECtUWqJR+JwGJm8F8Jc/zSQ1Fjm/FOxeqD36peIdBO3UXGGpyOL5lDIPYmJGSU1P4f2YYU3joOtX58Cw7cLm/yupjzRm1RsgNikakDm+suBMKphZY5q7z6DwCGujUN0sgtFZB0ZVHVpLMXUwbOsPDng6pzwnpRy520CJHouVgPaeBeReiciNlmohduH9A=
     stragedy: git
     on:
-      all_branches: true
-      condition: $TRAVIS_BRANCH =~ ^(master|dev)$
+      branch: master
   - provider: surge
     skip_cleanup: true
     project: './frontend/dist'
