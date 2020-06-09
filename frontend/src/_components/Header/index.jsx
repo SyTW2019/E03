@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl'
 import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
-import { assets } from '../../_helpers'
+import { assets } from '../../_helpers/assets'
 
 function Header() {
   return (
