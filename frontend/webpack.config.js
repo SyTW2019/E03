@@ -31,7 +31,7 @@ module.exports = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      apiUrl: 'https://damp-stream-85443.herokuapp.com/',
+      apiUrl: 'https://eventfinder-sytw.herokuapp.com/',
     }),
   },
   watchOptions: {
