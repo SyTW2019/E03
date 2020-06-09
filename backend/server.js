@@ -6,11 +6,11 @@ const bodyParser = require('body-parser')
 const jwt = require('_helpers/jwt')
 const errorHandler = require('_helpers/error-handler')
 
+app.use(express.static('assets/'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.use(express.static('assets/'))
 // use JWT auth to secure the api
 app.use(jwt())
 
