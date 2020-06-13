@@ -43,9 +43,7 @@ class App extends React.Component {
               </Switch>
             </div>
           </Router>
-          <div className="fixed-bottom mb-3">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </IntlProvider>
     )
