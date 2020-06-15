@@ -12,9 +12,15 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
+
   SignIn: {
     id: `${scope}.SignIn`,
     defaultMessage: 'Sign In',
+  },
+
+  LogOut: {
+    id: `${scope}.LogOut`,
+    defaultMessage: 'Log Out',
   },
 
   SignUp: {
