@@ -9,6 +9,7 @@ import { HomePage } from '../HomePage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { PaginaPrincipal } from '../PaginaPrincipal'
+import { Profile } from '../Profile'
 import Categoria from '../Categorias'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
@@ -39,6 +40,7 @@ class App extends React.Component {
                 <Route path="/login" component={LoginPage} />
                 <Route path="/register" component={RegisterPage} />
                 <PrivateRoute exact path="/logout" component={HomePage} />
+                <PrivateRoute exact path="/profile" component={Profile} />
                 <Redirect from="*" to="/" />
               </Switch>
             </div>

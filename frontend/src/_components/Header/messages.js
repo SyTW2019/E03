@@ -23,6 +23,11 @@ export default defineMessages({
     defaultMessage: 'Log Out',
   },
 
+  Profile: {
+    id: `${scope}.Profile`,
+    defaultMessage: 'Profile',
+  },
+
   SignUp: {
     id: `${scope}.SignUp`,
     defaultMessage: 'Sign Up',

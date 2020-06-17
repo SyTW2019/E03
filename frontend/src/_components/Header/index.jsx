@@ -39,6 +39,12 @@ function Header() {
               <FormattedMessage {...messages.LogOut} />
             </HeaderLink>
           }
+
+          {logged() &&
+            <HeaderLink to="/profile">
+              <FormattedMessage {...messages.Profile} />
+            </HeaderLink>
+          }
           
           {!logged() &&
             <HeaderLink to="/register">
