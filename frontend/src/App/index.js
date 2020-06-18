@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -9,9 +10,13 @@ import { HomePage } from '../HomePage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { PaginaPrincipal } from '../PaginaPrincipal'
+import { CreateEvent } from '../CreateEvent'
 import Categoria from '../Categorias'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
+import {Detail} from '../Detail'
+
+import './app.css' 
 
 class App extends React.Component {
   constructor(props) {
@@ -34,13 +39,17 @@ class App extends React.Component {
           <Router history={history}>
             <div>
               <Header />
-              <Switch>
-                <Route exact path="/" component={PaginaPrincipal} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/register" component={RegisterPage} />
-                <PrivateRoute exact path="/home_user" component={HomePage} />
-                <Redirect from="*" to="/" />
-              </Switch>
+              <div class="main">
+                <Switch>
+                  <Route exact path="/" component={PaginaPrincipal} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/register" component={RegisterPage} />
+                  <Route path="/create-event" component={CreateEvent} />
+                  <Route path="/detail" component={Detail} />
+                  <PrivateRoute exact path="/home_user" component={HomePage} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </div>
             </div>
           </Router>
           <Footer />
