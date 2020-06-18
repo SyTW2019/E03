@@ -10,9 +10,13 @@ import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { PaginaPrincipal } from '../PaginaPrincipal'
 import { Profile } from '../Profile'
+import { CreateEvent } from '../CreateEvent'
 import Categoria from '../Categorias'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
+import { Detail } from '../Detail'
+
+import './app.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -39,15 +43,15 @@ class App extends React.Component {
                 <Route exact path="/" component={PaginaPrincipal} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/register" component={RegisterPage} />
+                <Route path="/create-event" component={CreateEvent} />
+                <Route path="/detail" component={Detail} />
                 <PrivateRoute exact path="/logout" component={HomePage} />
                 <PrivateRoute exact path="/profile" component={Profile} />
                 <Redirect from="*" to="/" />
               </Switch>
             </div>
           </Router>
-          <div className="fixed-bottom mb-3">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </IntlProvider>
     )

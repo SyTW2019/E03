@@ -37,4 +37,9 @@ export default defineMessages({
     id: `${scope}.Category`,
     defaultMessage: 'Category',
   },
+
+  CreateEvent: {
+    id: `${scope}.CreateEvent`,
+    defaultMessage: 'Create event',
+  },
 })

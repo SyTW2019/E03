@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -15,6 +16,10 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
       },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      }
     ],
   },
   plugins: [
