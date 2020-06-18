@@ -52,18 +52,12 @@ function Header() {
             </HeaderLink>
           }
 
-
-
-<<<<<<< HEAD
-=======
-          <HeaderLink to="/register">
-            <FormattedMessage {...messages.SignUp} />
-          </HeaderLink>
-
-          <HeaderLink to="/create-event">
-            <FormattedMessage {...messages.CreateEvent} />
-          </HeaderLink>
->>>>>>> cc-create-events
+          {logged() &&
+            <HeaderLink to="/create-event">
+              <FormattedMessage {...messages.CreateEvent} />
+            </HeaderLink>
+          }
+          
         </NavBar>
       </div>
     </div>

@@ -39,16 +39,18 @@ class App extends React.Component {
           <Router history={history}>
             <div>
               <Header />
-              <Switch>
-                <Route exact path="/" component={PaginaPrincipal} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/register" component={RegisterPage} />
-                <Route path="/create-event" component={CreateEvent} />
-                <Route path="/detail" component={Detail} />
-                <PrivateRoute exact path="/logout" component={HomePage} />
-                <PrivateRoute exact path="/profile" component={Profile} />
-                <Redirect from="*" to="/" />
-              </Switch>
+              <div class="main">
+                <Switch>
+                  <Route exact path="/" component={PaginaPrincipal} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/register" component={RegisterPage} />
+                  <Route path="/detail" component={Detail} />
+                  <PrivateRoute exact path="/create-event" component={CreateEvent} />
+                  <PrivateRoute exact path="/logout" component={HomePage} />
+                  <PrivateRoute exact path="/profile" component={Profile} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </div>
             </div>
           </Router>
           <Footer />
