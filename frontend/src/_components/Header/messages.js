@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /*
  * HomePage Messages
  *
@@ -26,7 +25,6 @@ export default defineMessages({
   Category: {
     id: `${scope}.Category`,
     defaultMessage: 'Category',
-  // eslint-disable-next-line prettier/prettier
   },
 
   CreateEvent: {

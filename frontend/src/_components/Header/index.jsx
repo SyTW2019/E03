@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import NavBar from './NavBar'
@@ -36,7 +35,6 @@ function Header() {
           <HeaderLink to="/create-event">
             <FormattedMessage {...messages.CreateEvent} />
           </HeaderLink>
-
         </NavBar>
       </div>
     </div>

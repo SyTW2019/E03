@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
@@ -10,7 +9,6 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { Detail } from '../../Detail'
 
-
 const useStyles = makeStyles({
   card: {
     maxWidth: 345,
@@ -20,12 +18,7 @@ const useStyles = makeStyles({
 })
 export default function ImgMediaCard(props) {
   const classes = useStyles()
-  const {
-    title, 
-    src,
-    fecha,
-    desc
-  } = props
+  const { title, src, fecha, desc } = props
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -36,7 +29,7 @@ export default function ImgMediaCard(props) {
           image={src}
           title={title}
         />
-        <CardContent >
+        <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
@@ -46,14 +39,17 @@ export default function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button onClick={() => {
-                                  const name = 'Carmen';
-                                  console.log("Hello " + name)
-                                }} 
-                size="small" color="primary">
+        <Button
+          onClick={() => {
+            const name = 'Carmen'
+            console.log('Hello ' + name)
+          }}
+          size="small"
+          color="primary"
+        >
           Share
         </Button>
-        <Button size="small" color="primary" >
+        <Button size="small" color="primary">
           Learn More
         </Button>
       </CardActions>

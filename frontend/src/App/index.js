@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Router, Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -14,9 +13,9 @@ import { CreateEvent } from '../CreateEvent'
 import Categoria from '../Categorias'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
-import {Detail} from '../Detail'
+import { Detail } from '../Detail'
 
-import './app.css' 
+import './app.css'
 
 class App extends React.Component {
   constructor(props) {
