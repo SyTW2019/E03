@@ -17,7 +17,12 @@ import { withStyles } from "@material-ui/core/styles";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import ReduxThunk from 'redux-thunk';
 
+
 import { userActions } from '../_actions';
+
+
+
+
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -185,6 +190,9 @@ class RegisterPage extends React.Component {
     const { user, submitted } = this.state
     return (
       <div className="col-md-6 col-md-offset-3">
+
+
+
         <h2>Register</h2>
         <form name="form" onSubmit={this.handleSubmit}>
           <div
@@ -273,6 +281,10 @@ class RegisterPage extends React.Component {
             </Link>
           </div>
         </form>
+	
+
+
+
       </div>
     )
   }
