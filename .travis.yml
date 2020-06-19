@@ -12,7 +12,6 @@ addons:
     token:
       secure: lwEQbrznwAjCqmh/kIgcintJIJXRzmLPiAMX746wSrDQxL4tbFfAGMFNNy+VNi8HkZdgy7+1zGhe1bq1honvejqPHnnwc6fVJlRjR4EF+UTwPLzg4LjjUHySmbb+RvHuJLCzW97hsl8ZL9Izvquydlae04gFxJgZdYK01h/YGvIouRsbQR9NtquGrZeROLc86unDuv7zGFbbpIyQfpir3ddVg2H0pwLCojBprsNTw6xMWI5tPHju51fELzoR3ALeos+pFuaqcXYu3qEcrpDGw1GH7QJbMLc5Ywb2NAKmEgt9GYKDbWobPU8Db4gfwso4RuuX1Q1ccEiwX9yRinD21dvRN9IQETCWUARpK7uq0bvIRsZ5jlIr4s2+Z1UeHxAKr/dFFIQ2WRHHoMTFV8vG60EFjX3D2t9NiPOSQ2rdNvxMFVy8cRaMbLreKlD+PcOFPyEcp/pFokbABgixMTgXUm9aTfK0FBxcd8dvNg+hrj+MMlpd+56wmNTKya/bmmoybZkraVVewysXACPnULYozeIXEdNRaQ48F5Bo+CVa4crJESj9/Gb/KjW3XPBAPs6emN2Q6rHAdYXSUFuKJoDM0dLkwWl86yPIvx8JUEFB1DiJTV95bx9dtPE4AEf8H7q3yK69tIpLDG5VMAYn/7QaaJF2b6Ip36zhwso0sZjzALM=
 script:
-  - sonar-scanner
   - npm test
   - codecov
   - npm run build
