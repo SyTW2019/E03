@@ -67,13 +67,13 @@ class RegisterPage extends React.Component {
     
     this.setState({ submitted: true })
     const { user } = this.state;
-    if (user.firstName && user.lastName && user.username && user.password ) {
+    if (user.firstName && user.lastName && user.username && user.password && user.pwdError) {
     
-        if(user.pwdError){
-		user.pwdError = false;
+        
+		
       		this.props.register(user);
         
-        }
+        
     }
   }
 
@@ -145,6 +145,7 @@ class RegisterPage extends React.Component {
         
             if(user.password.length >= 6){
                 if((/^(?=.*[a-z])(?=.*[A-Z])/).test(user.password)){
+		    user.pwdError = true;
                     return true;
                 }
                 else{
