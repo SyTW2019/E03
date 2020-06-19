@@ -1,8 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import { withStyles } from "@material-ui/core/styles";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import ReduxThunk from 'redux-thunk';
 
-import { userActions } from '../_actions'
+import { userActions } from '../_actions';
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -14,12 +29,21 @@ class RegisterPage extends React.Component {
         lastName: '',
         username: '',
         password: '',
+       
       },
       submitted: false,
+      emailError: false,
+      pwdError: false,
+      nameError: false,
+      
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleErrorEmail = this.handleErrorEmail.bind(this)
+    this.handleErrorPwd = this.handleErrorPwd.bind(this) 
+    this.handleErrorName = this.handleErrorName.bind(this)
+    
   }
 
   handleChange(event) {
@@ -34,14 +58,126 @@ class RegisterPage extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault()
-
+    event.preventDefault();
+    console.log("Errores");
+    this.handleErrorName();
+    this.handleErrorEmail();
+    this.handleErrorPwd();
+  
+    
     this.setState({ submitted: true })
-    const { user } = this.state
-    if (user.firstName && user.lastName && user.username && user.password) {
-      this.props.register(user)
+    const { user } = this.state;
+    if (user.firstName && user.lastName && user.username && user.password ) {
+    
+        if(user.pwdError){
+		user.pwdError = false;
+      		this.props.register(user);
+        
+        }
     }
   }
+
+
+    handleErrorName(event) {
+	if(this.checkName())
+	    this.setState({
+		nameError:false,
+  	    })
+        else
+            this.setState({
+                nameError:true,
+                
+            })
+    }
+
+
+    handleErrorEmail(event){
+        if(this.validateEmail())
+            this.setState({
+                emailError:false,
+               
+            })
+        else
+            this.setState({
+                emailError:true,
+                
+            })
+        
+    }
+    handleErrorPwd(event){
+        if(this.check_pwd())
+
+		this.setState({
+
+                	pwdError:false,
+
+		
+            })
+        else
+            this.setState({
+                
+                pwdError:true,
+            })
+        
+    }
+
+
+    
+
+    validateEmail(){
+        const { user } = this.state;
+        console.log(user.username)
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.username))
+        {
+          return true;
+        }
+        else{ 
+	  alert("Error: Correo inválido, debe de tener el siguiente formato: example@example.com")
+          return false;
+        }
+    }
+
+
+
+    check_pwd(){
+	const { user } = this.state;
+        console.log("en el check")
+        
+            if(user.password.length >= 6){
+                if((/^(?=.*[a-z])(?=.*[A-Z])/).test(user.password)){
+                    return true;
+                }
+                else{
+                    alert("Error: Debe contener almenos una letra mayúscula")
+                    return false;
+                }
+		}
+            else{
+                alert("Error: Contraseña debe contener almenos 6 carácteres")
+                return false;
+            }
+	
+    
+ }
+
+
+
+
+
+    checkName(){
+        const { user } = this.state;
+	if(user.firstName.length === 0){
+		alert("Error: Debe introducir un nombre de usuario")
+		return false;
+	}
+	else
+		return true;
+    }
+
+
+
+
+ 
 
   render() {
     const { registering } = this.props
@@ -61,6 +197,7 @@ class RegisterPage extends React.Component {
               className="form-control"
               name="firstName"
               value={user.firstName}
+	      error={this.state.nameError}
               onChange={this.handleChange}
             />
             {submitted && !user.firstName && (
@@ -89,16 +226,17 @@ class RegisterPage extends React.Component {
               'form-group' + (submitted && !user.username ? ' has-error' : '')
             }
           >
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
             <input
               type="text"
               className="form-control"
               name="username"
               value={user.username}
+              error={this.state.emailError}
               onChange={this.handleChange}
             />
             {submitted && !user.username && (
-              <div className="help-block">Username is required</div>
+              <div className="help-block">Email is required</div>
             )}
           </div>
           <div
@@ -112,12 +250,18 @@ class RegisterPage extends React.Component {
               className="form-control"
               name="password"
               value={user.password}
+	      error={this.state.pwdError}
               onChange={this.handleChange}
             />
             {submitted && !user.password && (
               <div className="help-block">Password is required</div>
             )}
           </div>
+
+
+
+
+
           <div className="form-group">
             <button className="btn btn-primary">Register</button>
             {registering && (
