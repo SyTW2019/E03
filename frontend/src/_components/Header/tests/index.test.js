@@ -5,9 +5,30 @@ import Adapter from 'enzyme-adapter-react-16'
 import Header from '../index.jsx'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router'
-import localStorage from '../../../../localStorage';
 
-window.localStorage = localStorage;
+class LocalStorageMock {
+  constructor() {
+    this.store = {};
+  }
+
+  clear() {
+    this.store = {};
+  }
+
+  getItem(key) {
+    return this.store[key] || null;
+  }
+
+  setItem(key, value) {
+    this.store[key] = value.toString();
+  }
+
+  removeItem(key) {
+    delete this.store[key];
+  }
+};
+
+global.localStorage = new LocalStorageMock;
 
 configure({ adapter: new Adapter() })
 
@@ -20,8 +41,11 @@ global.document = window.document
 
 describe('<Header />', () => {
   test('Comprobar que se renderiza Header', () => {
+    var history = createMemoryHistory();
     const wrapper = mount(
+      <Router history={history}>
         <Header />
+      </Router>
     )
     expect(wrapper.find(Header)).toHaveLength(1)
   })  

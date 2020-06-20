@@ -16,13 +16,15 @@ global.document = window.document
 
 describe('<Card />', () => {
   test('Comprobar que se renderiza Card', () => {
-    const wrapper = mount(<Card
-      src="/images/book.jpg"
-      title="Firma de Libros de Miguel Noguera"
-      fecha="8 de Septiembre"
-      desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-      id="1"
-    />)
+    const wrapper = mount(
+        <Card
+          src="/images/book.jpg"
+          title="Firma de Libros de Miguel Noguera"
+          fecha="8 de Septiembre"
+          desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
+          id="1"
+        />
+    )
     expect(wrapper.find(Card)).toHaveLength(1)
   })
 })
