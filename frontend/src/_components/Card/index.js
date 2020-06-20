@@ -7,8 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import { Detail } from '../../Detail'
-import { assets } from '../../_helpers'
+import { assets } from '../../_helpers/assets'
 
 const useStyles = makeStyles({
   card: {
