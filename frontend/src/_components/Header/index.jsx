@@ -3,14 +3,14 @@ import { FormattedMessage } from 'react-intl'
 import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
-import logo from '../../../images/logo.png'
+import { assets } from '../../_helpers/assets'
 
 function Header() {
   return (
     <div className="d-flex border-bottom mb-5 mt-2 align-items-center">
       <div className="bd-highlight justify-content-start ml-4 mr-2">
         <img
-          src={logo}
+          src={assets('/images/logo.png')}
           alt="logo"
           className="img-responsive img-fluid"
           height="90"

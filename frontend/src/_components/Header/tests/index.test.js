@@ -2,7 +2,7 @@ import jsdom from 'jsdom'
 import React from 'react'
 import { mount, configure, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
-import Header from '../index'
+import Header from '../index.jsx'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router'
 

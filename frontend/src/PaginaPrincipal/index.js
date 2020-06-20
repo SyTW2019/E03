@@ -4,6 +4,7 @@ import Card from '../_components/Card'
 import Container from '@material-ui/core/Container'
 import Grid from '@material-ui/core/Grid'
 import CustomizedMenus from '../_components/CustomizedMenus'
+import { assets } from '../_helpers'
 
 export class PaginaPrincipal extends React.Component {
   constructor(props) {
@@ -18,10 +19,10 @@ export class PaginaPrincipal extends React.Component {
               <CustomizedMenus />
             </Grid>
             <Grid item xs={12}>
-              <Card src="images/book.jpg" />
+              <Card src={assets('/images/book.jpg')} />
             </Grid>
             <Grid item xs={12}>
-              <Card src="images/concierto.jpg" />
+              <Card src={assets('images/concierto.jpg')} />
             </Grid>
           </Grid>
         </div>
