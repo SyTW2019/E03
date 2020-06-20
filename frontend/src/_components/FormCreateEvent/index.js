@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { userActions } from '../../_actions'
 import './styles.css'
 import '../../styles.css'
-import './func.js'
 
 class FormCreateEvent extends Component {
   constructor(props) {

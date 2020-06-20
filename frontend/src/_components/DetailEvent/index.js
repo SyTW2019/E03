@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CardMedia from '@material-ui/core/CardMedia'
+import { assets } from '../../_helpers'
 
 export class DetailEvent extends Component {
   render() {
@@ -10,7 +11,7 @@ export class DetailEvent extends Component {
           component="img"
           alt="Concierto"
           height="140"
-          image={src}
+          image={assets(src)}
           title={title}
         />
         <div class="card-content">

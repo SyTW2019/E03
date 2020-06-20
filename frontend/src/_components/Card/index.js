@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { Detail } from '../../Detail'
+import { assets } from '../../_helpers'
 
 const useStyles = makeStyles({
   card: {
@@ -26,7 +27,7 @@ export default function ImgMediaCard(props) {
           component="img"
           alt={title}
           height="140"
-          image={src}
+          image={assets(src)}
           title={title}
         />
         <CardContent>
