@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SyTW2019/E03#readme",
   "devDependencies": {
+    "css-loader": "^3.6.0",
     "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",
