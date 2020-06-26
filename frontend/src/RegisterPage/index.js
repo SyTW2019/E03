@@ -1,10 +1,12 @@
 import React from 'react';
+import H3 from '../_components/H3';
+import Input from '../_components/Input';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
+
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
@@ -16,13 +18,11 @@ import Container from '@material-ui/core/Container';
 import { withStyles } from "@material-ui/core/styles";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import ReduxThunk from 'redux-thunk';
+import TextField from '@material-ui/core/TextField';
 
+import './styles.css';
 
 import { userActions } from '../_actions';
-
-
-
-
 
 class RegisterPage extends React.Component {
   constructor(props) {
@@ -133,11 +133,11 @@ class RegisterPage extends React.Component {
         const { user } = this.state;
         console.log(user.username)
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.username))
-        {
+        { user.emailError = true;
           return true;
         }
         else{ 
-	  alert("Error: Correo inválido, debe de tener el siguiente formato: example@example.com")
+	  user.emailError = false;
           return false;
         }
     }
@@ -154,12 +154,12 @@ class RegisterPage extends React.Component {
                     return true;
                 }
                 else{
-                    alert("Error: Debe contener almenos una letra mayúscula")
+                    user.pwdError = false;
                     return false;
                 }
 		}
             else{
-                alert("Error: Contraseña debe contener almenos 6 carácteres")
+                user.pwdError = false;
                 return false;
             }
 	
@@ -173,7 +173,7 @@ class RegisterPage extends React.Component {
     checkName(){
         const { user } = this.state;
 	if(user.firstName.length === 0){
-		alert("Error: Debe introducir un nombre de usuario")
+		
 		return false;
 	}
 	else
@@ -189,29 +189,43 @@ class RegisterPage extends React.Component {
     const { registering } = this.props
     const { user, submitted } = this.state
     return (
-      <div className="col-md-6 col-md-offset-3">
+	<div className="centrar">
+	
+      <div className="col-md-6 col-md-offset-3"  >
+	
 
+	<h2>Create Account</h2>
+	<br />
 
+        
+	<i className="fa fa-user-plus" ></i>
 
-        <h2>Register</h2>
         <form name="form" onSubmit={this.handleSubmit}>
-          <div
+          <div 
             className={
               'form-group' + (submitted && !user.firstName ? ' has-error' : '')
             }
           >
             <label htmlFor="firstName">First Name</label>
+
             <input
               type="text"
               className="form-control"
               name="firstName"
               value={user.firstName}
-	      error={this.state.nameError}
+	      
               onChange={this.handleChange}
             />
+
             {submitted && !user.firstName && (
               <div className="help-block">First Name is required</div>
             )}
+
+	     { user.firstName && (
+		<div ><span>&#9989;</span></div> 
+	     )}
+
+
           </div>
           <div
             className={
@@ -219,16 +233,25 @@ class RegisterPage extends React.Component {
             }
           >
             <label htmlFor="lastName">Last Name</label>
+
             <input
               type="text"
               className="form-control"
               name="lastName"
               value={user.lastName}
+	      
               onChange={this.handleChange}
             />
+
             {submitted && !user.lastName && (
               <div className="help-block">Last Name is required</div>
             )}
+
+	    { user.lastName && (
+		<div><span>&#9989;</span></div> )}
+
+
+
           </div>
           <div
             className={
@@ -241,12 +264,20 @@ class RegisterPage extends React.Component {
               className="form-control"
               name="username"
               value={user.username}
-              error={this.state.emailError}
+              
               onChange={this.handleChange}
             />
             {submitted && !user.username && (
-              <div className="help-block">Email is required</div>
+              <div className="help-block">Email is required
+		
+		</div>
             )}
+	    { !user.emailError && user.username && (
+		<div className="help-block">Email must have the following format: example@example.com </div>)}
+
+
+	    {  user.username && user.emailError &&(
+		<div><span>&#9989;</span></div>)}
           </div>
           <div
             className={
@@ -259,32 +290,45 @@ class RegisterPage extends React.Component {
               className="form-control"
               name="password"
               value={user.password}
-	      error={this.state.pwdError}
+	      
               onChange={this.handleChange}
             />
             {submitted && !user.password && (
-              <div className="help-block">Password is required</div>
+              <div className="help-block">Password is required
+		
+		</div>
+		
             )}
+	
+	    { !user.pwdError && user.password &&(
+		<div className="help-block">Password must have atleast 6 characters
+		<div >Password must have atleast 1 capital letter</div> </div>)}
+		
+		{ user.pwdError && user.password &&(
+		<div><span>&#9989;</span></div>)}
           </div>
 
 
 
-
+	  <br />
 
           <div className="form-group">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn btn-primary">Sign up</button>
             {registering && (
               <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             )}
+
+	    
+	   <p>
+		<br />Aleady have an account? <br />
             <Link to="/login" className="btn btn-link">
-              Cancel
+              Login here
             </Link>
+	</p>
           </div>
         </form>
 	
-
-
-
+	</div>
       </div>
     )
   }
