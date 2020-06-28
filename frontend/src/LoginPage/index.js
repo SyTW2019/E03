@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import './login.css';
 import { userActions } from '../_actions'
 
 class LoginPage extends React.Component {
@@ -40,15 +40,20 @@ class LoginPage extends React.Component {
     const { loggingIn } = this.props
     const { username, password, submitted } = this.state
     return (
+	<div className="background" >
+
+	<div className="center" >
       <div className="col-md-6 col-md-offset-3">
         <h2>Login</h2>
+	<br />
         <form name="form" onSubmit={this.handleSubmit}>
           <div
             className={
               'form-group' + (submitted && !username ? ' has-error' : '')
             }
           >
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
+	     <br />
             <input
               type="text"
               className="form-control"
@@ -57,7 +62,7 @@ class LoginPage extends React.Component {
               onChange={this.handleChange}
             />
             {submitted && !username && (
-              <div className="help-block">Username is required</div>
+              <div className="help-block">Email is required</div>
             )}
           </div>
           <div
@@ -66,6 +71,7 @@ class LoginPage extends React.Component {
             }
           >
             <label htmlFor="password">Password</label>
+		<br />
             <input
               type="password"
               className="form-control"
@@ -78,16 +84,23 @@ class LoginPage extends React.Component {
             )}
           </div>
           <div className="form-group">
+		<br />
             <button className="btn btn-primary">Login</button>
             {loggingIn && (
               <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             )}
-            <Link to="/register" className="btn btn-link">
-              Register
+
+	<p>
+		<br /> Don't have an account?
+            <br /><Link to="/register" className="btn btn-link">
+              Sign Up
             </Link>
+	</p>
           </div>
         </form>
       </div>
+	</div>
+	</div>
     )
   }
 }

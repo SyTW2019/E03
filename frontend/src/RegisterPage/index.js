@@ -189,6 +189,7 @@ class RegisterPage extends React.Component {
     const { registering } = this.props
     const { user, submitted } = this.state
     return (
+	<div className="back" >
 	<div className="centrar">
 	
       <div className="col-md-6 col-md-offset-3"  >
@@ -198,7 +199,7 @@ class RegisterPage extends React.Component {
 	<br />
 
         
-	<i className="fa fa-user-plus" ></i>
+	
 
         <form name="form" onSubmit={this.handleSubmit}>
           <div 
@@ -207,7 +208,9 @@ class RegisterPage extends React.Component {
             }
           >
             <label htmlFor="firstName">First Name</label>
+		
 
+	   
             <input
               type="text"
               className="form-control"
@@ -215,16 +218,19 @@ class RegisterPage extends React.Component {
               value={user.firstName}
 	      
               onChange={this.handleChange}
-            />
 
+		
+            />
+		
+             
             {submitted && !user.firstName && (
               <div className="help-block">First Name is required</div>
             )}
 
-	     { user.firstName && (
-		<div ><span>&#9989;</span></div> 
+	     
+	    { user.firstName && (
+		<div><span>&#9989;</span></div>
 	     )}
-
 
           </div>
           <div
@@ -233,7 +239,7 @@ class RegisterPage extends React.Component {
             }
           >
             <label htmlFor="lastName">Last Name</label>
-
+	    	
             <input
               type="text"
               className="form-control"
@@ -327,7 +333,7 @@ class RegisterPage extends React.Component {
 	</p>
           </div>
         </form>
-	
+	</div>
 	</div>
       </div>
     )
