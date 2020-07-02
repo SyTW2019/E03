@@ -1,5 +1,5 @@
 import { eventConstants } from '../_constants'
-import { eventService } from '../services'
+import { eventService } from '../_services'
 import { history } from '../_helpers'
 import { alertActions } from './alert.actions'
 
