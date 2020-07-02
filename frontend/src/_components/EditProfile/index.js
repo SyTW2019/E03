@@ -1,173 +1,126 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import { userActions } from '../../_actions'
 
 import '../../styles.css'
-/* import { RegisterPage } from '../../RegisterPage'
- */
+
 class EditProfile extends React.Component {
 
-     constructor(props) {
-        super(props)
-    
-        this.state = {
-          user: {
+    constructor(props) {
+		super(props)
+		
+		this.state = {
+		  username: '',
+		  password: '',
+		  firstName: '',
+		  lastName: '',
+		  createdDate: '',
+          user:'',
+          changeUser: {
             firstName: '',
             lastName: '',
             username: '',
             password: '',
-          },
-          submitted: false,
+          }
         }
-    
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-      }
+
+    }
+    componentDidMount() {
+        this.props.getUsers()
+    }
     
-      handleChange(event) {
+    handleChange(event) {
         const { name, value } = event.target
-        const { user } = this.state
+        const { changeUser } = this.state
         this.setState({
-          user: {
-            ...user,
+            changeUser: {
+            ...changeUser,
             [name]: value,
           },
         })
-      }
-    
-      handleSubmit(event) {
-        event.preventDefault()
-    
-        this.setState({ submitted: true })
-        const { user } = this.state
-        if (user.firstName && user.lastName && user.username && user.password) {
-          this.props.register(user)
-        }
-      } 
-      componentDidMount() {
-		this.props.getUsers()
-	  }
+    }
 
+    handleSubmit(event) {
+        event.preventDefault()
+/*         this.setState({ submitted: true })
+ */     const { changeUser } = this.state
+        const { user } = this.props
+        console.log(user.username);
+        console.log(user._id);
+        console.log(changeUser);
+        
+        this.props.update(user._id, changeUser)
+    
+      }
+        
     render() {
-        const { registering } = this.props
-        const { user, submitted } = this.state 
-        const { users } = this.props
+        const { user } = this.props
+        const { changeUser } = this.state
+
 
       return (
-        <div class="w-50 mt-5 ml-5"> 
+    
+    <div class="w-50 mt-5 ml-5"> 
 
-{/*             <RegisterPage />
- */}
       <div className="centrar">
         <div className="col-md-6 col-md-offset-3">
-          <h2>Editar datos del perfil</h2>
-          <form name="form" onSubmit={this.handleSubmit}>
-            <div
-              className={
-                'form-group' +
-                (submitted && !user.firstName ? ' has-error' : '')
-              }
-            >
-              <label htmlFor="firstName">First Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="firstName"
-                value={user.firstName}
-                onChange={this.handleChange}
-              />
-              {submitted && !user.firstName && (
-                <div className="help-block">First Name is required</div>
-              )}
-            </div>
-            <div
-              className={
-                'form-group' + (submitted && !user.lastName ? ' has-error' : '')
-              }
-            >
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                className="form-control"
-                name="lastName"
-                value={user.lastName}
-                onChange={this.handleChange}
+          <h2 className="mb-2">Editar datos del perfil</h2>
 
-              />
-              {submitted && !user.lastName && (
-                <div className="help-block">Last Name is required</div>
-              )}
-            </div>
-            <div
-              className={
-                'form-group' + (submitted && !user.username ? ' has-error' : '')
-              }
-            >
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                className="form-control"
-                name="username"
-                value={user.username}
-                onChange={this.handleChange}
-              />
-              {submitted && !user.username && (
-                <div className="help-block">Username is required</div>
-              )}
-            </div>
-            <div
-              className={
-                'form-group' + (submitted && !user.password ? ' has-error' : '')
-              }
-            >
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                value={user.password}
-                onChange={this.handleChange}
-              />
-              {submitted && !user.password && (
-                <div className="help-block">Password is required</div>
-              )}
-            </div>
+          <form name="form" onSubmit={this.handleSubmit}>
+            
             <div className="form-group">
-              <button className="btn btn-primary">Register</button>
-              {registering && (
-                <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-              )}
-              <Link to="/login" className="btn btn-link">
-                Cancel
-              </Link>
+                <label htmlFor="Username">Username</label>
+                <input type="text" className="form-control" name="username" value={changeUser.username} onChange={this.handleChange} placeholder={user.username} />
+            </div>
+            
+            <div className="form-group">
+                <label htmlFor="First Name">First Name</label>
+                <input type="text" value={changeUser.firstName} onChange={this.handleChange} className="form-control" id="firstname" placeholder={user.firstName} />
+            </div>
+            
+            <div className="form-group">
+                <label htmlFor="Last Name">Last Name</label>
+                <input type="text" value={changeUser.lastName} onChange={this.handleChange} className="form-control" id="lastname" placeholder={user.lastName} />
+            </div>
+
+            <h4 className="mt-3 mb-2"> Change password </h4>
+
+            <div className="form-group">
+                <label htmlFor="OldPassword">Old password</label>
+                <input type="text" className="form-control" id="OldPassword" />
+            </div>
+
+            <div className="form-group">
+                <label htmlFor="NewPassword">New password</label>
+                <input type="text" value={changeUser.password} onChange={this.handleChange} className="form-control" id="NewPassword" />
+            </div>
+            
+             <div className="form-group">
+              <button className="btn btn-primary"> Save </button>
             </div>
           </form>
         </div>
       </div>
-
-
-
-        </div>
+    </div>
         
       )
     }
 }
 
 function mapState(state) {
-    const { registering } = state.registration
     const { users, authentication } = state
 	const { user } = authentication
-	return { registering, user, users }
-  }
+	return { user, users }
+}
   
-  const actionCreators = {
-    register: userActions.register,
+const actionCreators = {
     getUsers: userActions.getAll,
+    update: userActions.update,
 
-  }
+}
   
-  const connectedEditProfile = connect(mapState, actionCreators)(EditProfile)
-  export default connectedEditProfile;
+const connectedEditProfile = connect(mapState, actionCreators)(EditProfile)
+export default connectedEditProfile;
   
