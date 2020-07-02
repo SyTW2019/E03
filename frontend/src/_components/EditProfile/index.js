@@ -47,11 +47,16 @@ class EditProfile extends React.Component {
 /*         this.setState({ submitted: true })
  */     const { changeUser } = this.state
         const { user } = this.props
-        console.log(user.username);
-        console.log(user._id);
+        console.log(user);
         console.log(changeUser);
         
-        this.props.update(user._id, changeUser)
+        for(let clave in changeUser)
+          if(changeUser[clave]=="")
+            delete changeUser[clave];
+
+        console.log(Object.assign(user,changeUser))
+
+        this.props.update(user)
     
       }
         
@@ -77,12 +82,12 @@ class EditProfile extends React.Component {
             
             <div className="form-group">
                 <label htmlFor="First Name">First Name</label>
-                <input type="text" value={changeUser.firstName} onChange={this.handleChange} className="form-control" id="firstname" placeholder={user.firstName} />
+                <input type="text" name="firstName" value={changeUser.firstName} onChange={this.handleChange} className="form-control" id="firstname" placeholder={user.firstName} />
             </div>
             
             <div className="form-group">
                 <label htmlFor="Last Name">Last Name</label>
-                <input type="text" value={changeUser.lastName} onChange={this.handleChange} className="form-control" id="lastname" placeholder={user.lastName} />
+                <input type="text" name="lastName" value={changeUser.lastName} onChange={this.handleChange} className="form-control" id="lastname" placeholder={user.lastName} />
             </div>
 
             <h4 className="mt-3 mb-2"> Change password </h4>
@@ -94,7 +99,7 @@ class EditProfile extends React.Component {
 
             <div className="form-group">
                 <label htmlFor="NewPassword">New password</label>
-                <input type="text" value={changeUser.password} onChange={this.handleChange} className="form-control" id="NewPassword" />
+                <input type="text" name="password" value={changeUser.password} onChange={this.handleChange} className="form-control" id="NewPassword" />
             </div>
             
              <div className="form-group">
