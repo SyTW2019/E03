@@ -62,15 +62,22 @@ async function update(id, userParam) {
     throw 'Username "' + userParam.username + '" is already taken'
   }
 
+  let status = !!!userParam.password;
+
   // hash password if it was entered
-  if (userParam.password) {
+  if (userParam.password && bcrypt.compareSync(userParam.oldPassword, user.hash)) {
+    status = true;
     userParam.hash = bcrypt.hashSync(userParam.password, 10)
   }
+
+  console.log(status);
 
   // copy userParam properties to user
   Object.assign(user, userParam)
 
   await user.save()
+
+  return status;
 }
 
 async function _delete(id) {

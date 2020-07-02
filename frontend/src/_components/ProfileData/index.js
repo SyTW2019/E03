@@ -27,13 +27,13 @@ class ProfileData extends React.Component {
       return (
         <div class="w-50 mt-5 ml-5"> 
 
-          <h1> Nombre de usuario </h1>
+          <h1> Username </h1>
           <p class="mb-3 ml-1">{user.username}</p>
 
-          <h1> Nombre completo </h1>
+          <h1> Name </h1>
           <p class="mb-3 ml-1">{user.firstName} {user.lastName} </p>
 
-          <h1> Fecha de creación de la cuenta </h1>
+          <h1> Account creation date </h1>
           <p class="mb-3 ml-1">{user.createdDate.split('T')[0]}</p>
 
         </div>

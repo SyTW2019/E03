@@ -20,6 +20,7 @@ class EditProfile extends React.Component {
             firstName: '',
             lastName: '',
             username: '',
+            oldPassword: '',
             password: '',
           }
         }
@@ -55,7 +56,7 @@ class EditProfile extends React.Component {
             delete changeUser[clave];
 
         console.log(Object.assign(user,changeUser))
-
+        console.log(user.password)
         this.props.update(user)
     
       }
@@ -94,7 +95,7 @@ class EditProfile extends React.Component {
 
             <div className="form-group">
                 <label htmlFor="OldPassword">Old password</label>
-                <input type="text" className="form-control" id="OldPassword" />
+                <input type="text" name="oldPassword" value={changeUser.oldPassword} onChange={this.handleChange} className="form-control" id="OldPassword" />
             </div>
 
             <div className="form-group">
