@@ -6,6 +6,7 @@ const schema = new Schema({
   beginDate: { type: Date, required: true },
   endDate: { type: Date },
   description: { type: String, required: true },
+  location: { type: String, required: true },
   imageUrl: { type: String },
   guests: [{ type: mongoose.ObjectId, ref: 'User' }],
   creator: { type: mongoose.ObjectId, ref: 'User', required: true },
