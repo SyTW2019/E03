@@ -24,19 +24,15 @@ function Header() {
 
       <div className="p-2 bd-highlight">
         <NavBar>
-          <HeaderLink to="/">
-            <FormattedMessage {...messages.home} />
-          </HeaderLink>
+          {logged() &&
+            <HeaderLink to="/">
+              <FormattedMessage {...messages.home} />
+            </HeaderLink>
+          }
 
           {!logged() &&
             <HeaderLink to="/login">
               <FormattedMessage {...messages.SignIn} />
-            </HeaderLink>
-          }
-
-          {logged() &&
-            <HeaderLink to="/logout">
-              <FormattedMessage {...messages.LogOut} />
             </HeaderLink>
           }
 
@@ -55,6 +51,12 @@ function Header() {
           {logged() &&
             <HeaderLink to="/create-event">
               <FormattedMessage {...messages.CreateEvent} />
+            </HeaderLink>
+          }
+
+          {logged() &&
+            <HeaderLink to="/logout" style={{position: "absolute", right: 0 + "px"}}>
+              <FormattedMessage {...messages.LogOut} />
             </HeaderLink>
           }
           
