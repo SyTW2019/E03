@@ -1,9 +1,13 @@
+/* eslint-disable prettier/prettier */
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const path = require('path')
 module.exports = {
   mode: 'production',
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      images: 'www.localhost:4000/images',
+    },
   },
   module: {
     rules: [
@@ -16,9 +20,15 @@ module.exports = {
         loader: 'file-loader',
       },
       {
+
         test: /\.css$/i,
         use: ['style-loader', 'css-loader' ],
       },
+
+        test: /\.css$/,
+	loader: 'style-loader!css-loader',
+      }
+
     ],
   },
   plugins: [
@@ -32,7 +42,7 @@ module.exports = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      apiUrl: 'http://localhost:4000',
+      apiUrl: 'https://eventfinder-sytw.herokuapp.com/',
     }),
   },
   watchOptions: {

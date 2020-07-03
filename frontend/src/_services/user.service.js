@@ -72,9 +72,10 @@ function update(user) {
     body: JSON.stringify(user),
   }
 
-  return fetch(`${config.apiUrl}/users/${user.id}`, requestOptions).then(
+  return fetch(`${config.apiUrl}/users/${user._id}`, requestOptions).then(
     handleResponse
   )
+  .catch(param => console.log(param))
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
@@ -92,11 +93,16 @@ function _delete(id) {
 function handleResponse(response) {
   return response.text().then((text) => {
     const data = text && JSON.parse(text)
+    console.log(response)
     if (!response.ok) {
       if (response.status === 401) {
         // auto logout if 401 response returned from api
         logout()
         location.reload(true)
+      }
+
+      if(response.status === 400){
+        alert("Contraseña incorrecta");
       }
 
       const error = (data && data.message) || response.statusText

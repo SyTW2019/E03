@@ -12,9 +12,20 @@ export default defineMessages({
     id: `${scope}.home`,
     defaultMessage: 'Home',
   },
+
   SignIn: {
     id: `${scope}.SignIn`,
     defaultMessage: 'Sign In',
+  },
+
+  LogOut: {
+    id: `${scope}.LogOut`,
+    defaultMessage: 'Log Out',
+  },
+
+  Profile: {
+    id: `${scope}.Profile`,
+    defaultMessage: 'Profile',
   },
 
   SignUp: {
@@ -25,5 +36,10 @@ export default defineMessages({
   Category: {
     id: `${scope}.Category`,
     defaultMessage: 'Category',
+  },
+
+  CreateEvent: {
+    id: `${scope}.CreateEvent`,
+    defaultMessage: 'Create event',
   },
 })

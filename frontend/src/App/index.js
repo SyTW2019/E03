@@ -9,9 +9,13 @@ import { HomePage } from '../HomePage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { PaginaPrincipal } from '../PaginaPrincipal'
-import Categoria from '../Categorias'
+import { Profile } from '../Profile'
+import { CreateEvent } from '../CreateEvent'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
+import { Detail } from '../Detail'
+
+import './app.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -34,18 +38,21 @@ class App extends React.Component {
           <Router history={history}>
             <div>
               <Header />
-              <Switch>
-                <Route exact path="/" component={PaginaPrincipal} />
-                <Route path="/login" component={LoginPage} />
-                <Route path="/register" component={RegisterPage} />
-                <PrivateRoute exact path="/home_user" component={HomePage} />
-                <Redirect from="*" to="/" />
-              </Switch>
+              <div class="main">
+                <Switch>
+                  <Route exact path="/" component={PaginaPrincipal} />
+                  <Route path="/login" component={LoginPage} />
+                  <Route path="/register" component={RegisterPage} />
+                  <Route path="/detail" component={Detail} />
+                  <PrivateRoute exact path="/create-event" component={CreateEvent} />
+                  <PrivateRoute exact path="/logout" component={HomePage} />
+                  <PrivateRoute exact path="/profile" component={Profile} />
+                  <Redirect from="*" to="/" />
+                </Switch>
+              </div>
             </div>
           </Router>
-          <div className="fixed-bottom mb-3">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </IntlProvider>
     )
