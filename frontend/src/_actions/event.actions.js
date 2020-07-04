@@ -16,6 +16,7 @@ export const eventActions = {
 function create(event) {
   return (dispatch) => {
     dispatch(request(event))
+
     eventService.create(event).then(
       (event) => {
         dispatch(success(event))

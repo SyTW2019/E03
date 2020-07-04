@@ -14,7 +14,7 @@ export const eventService = {
 function create(event) {
   const requestOptions = {
     method: 'POST',
-    headers: authHeader(),
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
   }
   return fetch(`${config.apiUrl}/events/new`, requestOptions).then(

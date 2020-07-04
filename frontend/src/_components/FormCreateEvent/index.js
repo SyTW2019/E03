@@ -38,21 +38,13 @@ class FormCreateEvent extends Component {
     })
   }
 
-  // crear un registerEvent para eventos
-  // se tiene que registrar el evento y añadir una nueva card a la página principal
   handleSubmit(e) {
     e.preventDefault()
-
     this.setState({ submitted: true })
     const { event } = this.state
-    if (
-      event.eventName &&
-      event.beginDate &&
-      event.description &&
-      event.location 
-
-    ) {
-      this.props.registerEvent(event)
+    if (event.eventName && event.beginDate && event.description && event.location) {
+      console.log(event);
+      this.props.create(event)
     }
   }
 
@@ -162,15 +154,15 @@ class FormCreateEvent extends Component {
               }
             >
 
-    <Form.File id="formcheck-api-regular">
-      <Form.File.Label>Picture</Form.File.Label>
-      <Form.File.Input type="file"
-                id="upload_file"
-                className="form-control border-0 bg-transparent"
-                name="imageUrl"
-                value={event.imageUrl}
-                onChange={this.handleChange}/>
-    </Form.File>
+            <Form.File id="formcheck-api-regular">
+              <Form.File.Label>Picture</Form.File.Label>
+              <Form.File.Input type="file"
+                        id="upload_file"
+                        className="form-control border-0 bg-transparent"
+                        name="imageUrl"
+                        value={event.imageUrl}
+                        onChange={this.handleChange}/>
+            </Form.File>
               {/* <label htmlFor="imageUrl">Picture</label>
               <input
                 type="file"
@@ -183,8 +175,12 @@ class FormCreateEvent extends Component {
             </div>
 
             <br />
+
             <div className="form-group">
               <button className="btn btn-primary">Create</button>
+              {creating && (
+                <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              )}
               <Link to="/" className="btn btn-link">
                 Cancel
               </Link>
@@ -202,7 +198,8 @@ function mapState(state) {
 }
 
 const actionCreators = {
-  registerEvent: eventActions.create,
+  create: eventActions.create,
+  
 }
 
 const connectedCreateEventPage = connect(mapState, actionCreators)(FormCreateEvent)

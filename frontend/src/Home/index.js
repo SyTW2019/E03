@@ -15,17 +15,36 @@ class Home extends React.Component {
     this.state = {
       isOpen: false,
       id: '',
+      event: {
+        eventName: '',
+        beginDate: '',
+        endDate: '',
+        description: '',
+        location: '',
+        imageUrl: '',
+
+      },
 
     }
   }
   componentDidMount() {
-    //this.props.getEvents()
+    this.props.getEvents()
   }
   
   render() {
     const { event } = this.props
     return (
-    <Container fluid>
+      <p>{event}</p>
+
+     /*  <Card
+      src="/images/book.jpg"
+      title={event.eventName}
+      fecha="8 de Septiembre"
+      desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
+      id="1"
+      
+    /> */
+      /* <Container fluid>
         <div>
           <Grid >
             <Grid className="mb-5 ml-5">
@@ -40,7 +59,7 @@ class Home extends React.Component {
                 title="Firma de Libros de Miguel Noguera"
                 fecha="8 de Septiembre"
                 desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-                id="1"
+                id="1" Librería Lemus, San Cristóbal de La Laguna
                 
               />
           </Col>
@@ -115,15 +134,14 @@ class Home extends React.Component {
         </div>
         </Grid>
         </div>
-      </Container>
+      </Container> */
     )
   }
 }
 
 function mapState(state) {
-	const { users, authentication } = state
-	const { user } = authentication
-	return { user, users }
+	const { event } = state
+	return { event }
   }
   
   const actionCreators = {
