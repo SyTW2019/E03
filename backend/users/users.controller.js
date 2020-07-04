@@ -55,8 +55,8 @@ function getById(req, res, next) {
 function update(req, res, next) {
   userService
     .update(req.params.id, req.body)
-    .then(() => res.json({}))
-    .catch((err) => next(err))
+    .then(code => code ? res.status(200).json({}) : res.status(400).json({}))
+    .catch(err => next(err));
 }
 
 function _delete(req, res, next) {

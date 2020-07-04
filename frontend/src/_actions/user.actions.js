@@ -8,6 +8,7 @@ export const userActions = {
   logout,
   register,
   getAll,
+  update,
   delete: _delete,
 }
 
@@ -92,6 +93,28 @@ function getAll() {
   }
 }
 
+function update(user) {
+  return (dispatch) => {
+    dispatch(request())
+
+    userService.update(user).then(
+      (user) => dispatch(success(user._id)),
+      (error) => dispatch(failure(user._id, error.toString()))
+    )
+  }
+
+  function request(id) {
+    return { type: userConstants.UPDATE_REQUEST, id }
+  }
+  function success(id) {
+    return { type: userConstants.UPDATE_SUCCESS, id }
+  }
+  function failure(id, error) {
+    return { type: userConstants.UPDATE_FAILURE, id, error }
+  }
+}
+
+// prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
   return (dispatch) => {
     dispatch(request(id))
