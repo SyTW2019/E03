@@ -14,7 +14,7 @@ export class PaginaPrincipal extends React.Component {
   }
   render() {
     return (
-    <Container fluid /* style={{minWidth: '1700px'}} */>
+    <Container fluid>
         <div>
           <Grid >
             <Grid className="mb-5 ml-5">
@@ -22,7 +22,7 @@ export class PaginaPrincipal extends React.Component {
             </Grid>
 
         <div style={{display: 'grid', justifyContent: 'center'}}>
-          <Row className="mb-5 w-100" /* style={{minWidth: '1700px'}} */>
+          <Row className="mb-5 w-100">
           <Col style={{maxWidth: '400px'}}>
               <Card
                 src="/images/book.jpg"
@@ -61,7 +61,7 @@ export class PaginaPrincipal extends React.Component {
               />
           </Col>
         </Row>
-        <Row className="mb-5 w-100" /* style={{minWidth: '1700px'}} */>
+        <Row className="mb-5 w-100">
           <Col style={{maxWidth: '400px'}}>
               <Card
                 src="/images/concierto.jpg"
@@ -106,6 +106,3 @@ export class PaginaPrincipal extends React.Component {
     )
   }
 }
-/*TODO: 
-  Más props para las tarjetas
-*/
