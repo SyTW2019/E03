@@ -6,13 +6,24 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Grid from '@material-ui/core/Grid'
 import CustomizedMenus from '../_components/CustomizedMenus'
-import { assets } from '../_helpers'
+import { eventActions } from '../_actions'
+import { connect } from 'react-redux'
 
-export class PaginaPrincipal extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      isOpen: false,
+      id: '',
+
+    }
   }
+  componentDidMount() {
+    //this.props.getEvents()
+  }
+  
   render() {
+    const { event } = this.props
     return (
     <Container fluid>
         <div>
@@ -30,6 +41,7 @@ export class PaginaPrincipal extends React.Component {
                 fecha="8 de Septiembre"
                 desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
                 id="1"
+                
               />
           </Col>
           <Col style={{maxWidth: '400px'}}>
@@ -48,6 +60,7 @@ export class PaginaPrincipal extends React.Component {
                 fecha="8 de Septiembre"
                 desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
                 id="1"
+
               />
           </Col>
 
@@ -106,3 +119,16 @@ export class PaginaPrincipal extends React.Component {
     )
   }
 }
+
+function mapState(state) {
+	const { users, authentication } = state
+	const { user } = authentication
+	return { user, users }
+  }
+  
+  const actionCreators = {
+	getEvents: eventActions.getAll,
+  }
+  
+  const connectedHome = connect(mapState, actionCreators)(Home)
+  export { connectedHome as Home }

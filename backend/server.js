@@ -16,6 +16,7 @@ app.use(jwt())
 
 // api routes
 app.use('/users', require('./users/users.controller'))
+app.use('/events', require('./events/events.controller'))
 
 // global error handler
 app.use(errorHandler)
@@ -24,5 +25,5 @@ app.use(errorHandler)
 const port =
   process.env.NODE_ENV === 'production' ? process.env.PORT || 80 : 4000
 const server = app.listen(port, function () {
-  console.log('Serve list ening on port ' + port)
+  console.log('Serve listening on port ' + port)
 })

@@ -18,7 +18,7 @@ function login(username, password) {
     userService.login(username, password).then(
       (user) => {
         dispatch(success(user))
-        history.push('/home_user')
+        history.push('/')
       },
       (error) => {
         dispatch(failure(error.toString()))
@@ -49,7 +49,7 @@ function register(user) {
 
     userService.register(user).then(
       (user) => {
-        dispatch(success())
+        dispatch(success(user))
         history.push('/login')
         dispatch(alertActions.success('Registration successful'))
       },
@@ -92,13 +92,12 @@ function getAll() {
   }
 }
 
-// prefixed function name with underscore because delete is a reserved word in javascript
 function _delete(id) {
   return (dispatch) => {
     dispatch(request(id))
 
     userService.delete(id).then(
-      (user) => dispatch(success(id)),
+      (user) => dispatch(success(user)),
       (error) => dispatch(failure(id, error.toString()))
     )
   }
