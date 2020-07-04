@@ -58,7 +58,7 @@
       "node_modules"
     ],
     "setupFiles": [
-      "browserMocks.js"
+      "<rootDir>/__mocks__/fileMock.js"
     ]
   }
 }
