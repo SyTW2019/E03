@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
 import { assets } from '../../_helpers/assets'
-import "../../styles.css"
+import "./header.css"
 
 function logged() {
   return (localStorage.getItem('user') !== null)? true : false;

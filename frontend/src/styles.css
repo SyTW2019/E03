@@ -2,8 +2,3 @@
     display: flex;
     justify-content: center;
 }
-
-.logout{
-    position: absolute;
-    right: 0px;
-}
