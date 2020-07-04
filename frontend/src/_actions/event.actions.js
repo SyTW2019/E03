@@ -88,6 +88,7 @@ function getAll() {
 }
 function getInformation(id) {
   return (dispatch) => {
+    if (id == -1) return
     dispatch(request({ id }))
     eventService.getById(id).then(
       (events) => {
