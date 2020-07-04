@@ -141,6 +141,7 @@ function join(id) {
     eventService.join(id).then(
       (id) => {
         dispatch(success(id))
+        dispatch(alertActions.success('Joined succesfully to the event'))
       },
       (error) => {
         dispatch(failure(error.toString()))
@@ -165,6 +166,7 @@ function unjoin(id) {
     eventService.unjoin(id).then(
       (event) => {
         dispatch(success(id))
+        dispatch(alertActions.success('Unjoined succesfully to the event'))
       },
       (error) => {
         dispatch(failure(error.toString()))
