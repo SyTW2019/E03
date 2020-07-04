@@ -12,10 +12,13 @@ export const eventService = {
 }
 
 function create(event) {
+  let headers = authHeader()
+  headers["Content-Type"] = "application/json"
+
   const requestOptions = {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(event),
+    headers: headers,
+    body: JSON.stringify({event}),
   }
   return fetch(`${config.apiUrl}/events/new`, requestOptions).then(
     handleResponse
@@ -39,9 +42,12 @@ function getById(id) {
   )
 }
 function update(event) {
+  let headers = authHeader()
+  headers["Content-Type"] = "application/json"
+
   const requestOptions = {
     method: 'PUT',
-    headers: authHeader(),
+    headers: headers,
     body: JSON.stringify(event),
   }
   return fetch(`${config.apiUrl}/events/${event.id}`, requestOptions).then(
