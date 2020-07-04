@@ -4,7 +4,6 @@ import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
 import { assets } from '../../_helpers/assets'
-import "./header.css"
 
 function logged() {
   return (localStorage.getItem('user') !== null)? true : false;
@@ -56,7 +55,7 @@ function Header() {
           }
 
           {logged() &&
-            <HeaderLink to="/logout" className="logout">
+            <HeaderLink to="/logout">
               <FormattedMessage {...messages.LogOut} />
             </HeaderLink>
           }
