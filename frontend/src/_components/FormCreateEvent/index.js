@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { userActions } from '../../_actions'
+import { eventActions } from '../../_actions'
+import Form from 'react-bootstrap/Form'
 import './styles.css'
 import '../../styles.css'
 
@@ -12,11 +13,12 @@ class FormCreateEvent extends Component {
     this.state = {
       event: {
         eventName: '',
-        location: '',
-        startDate: '',
+        beginDate: '',
         endDate: '',
-        desc: '',
-        pic: '',
+        description: '',
+        location: '',
+        imageUrl: '',
+
       },
       submitted: false,
     }
@@ -45,11 +47,10 @@ class FormCreateEvent extends Component {
     const { event } = this.state
     if (
       event.eventName &&
-      event.location &&
-      event.startDate &&
-      event.endDate &&
-      event.desc &&
-      event.pic
+      event.beginDate &&
+      event.description &&
+      event.location 
+
     ) {
       this.props.registerEvent(event)
     }
@@ -62,7 +63,7 @@ class FormCreateEvent extends Component {
     return (
       <div className="centrar">
         <div className="col-md-6 col-md-offset-3">
-          <h2>Create Event</h2>
+          <h2 className="mb-3">Create Event</h2>
           <form name="form" onSubmit={this.handleSubmit}>
             <div
               className={
@@ -104,27 +105,45 @@ class FormCreateEvent extends Component {
 
             <div
               className={
-                'form-group' +
-                (submitted && !event.startDate ? ' has-error' : '')
+                'form-group' + (submitted && !event.description ? ' has-error' : '')
               }
             >
-              <label htmlFor="startDate">Start date</label>
+              <label htmlFor="description">Description</label>
               <input
-                type="date"
+                type="text"
                 className="form-control"
-                name="startDate"
-                value={event.startDate}
+                name="description"
+                value={event.description}
                 onChange={this.handleChange}
               />
-              {submitted && !event.startDate && (
-                <div className="help-block">Start date is required</div>
+              {submitted && !event.description && (
+                <div className="help-block">A description is required</div>
               )}
             </div>
 
             <div
               className={
                 'form-group' +
-                (submitted && !event.endtDate ? ' has-error' : '')
+                (submitted && !event.beginDate ? ' has-error' : '')
+              }
+            >
+              <label htmlFor="beginDate">Start date</label>
+              <input
+                type="date"
+                className="form-control"
+                name="beginDate"
+                value={event.beginDate}
+                onChange={this.handleChange}
+              />
+              {submitted && !event.beginDate && (
+                <div className="help-block">Begin date is required</div>
+              )}
+            </div>
+
+            <div
+              className={
+                'form-group' +
+                (submitted && !event.endDate ? ' has-error' : '')
               }
             >
               <label htmlFor="endDate">End date</label>
@@ -135,46 +154,32 @@ class FormCreateEvent extends Component {
                 value={event.endDate}
                 onChange={this.handleChange}
               />
-              {submitted && !event.endDate && (
-                <div className="help-block">End date is required</div>
-              )}
-            </div>
+            </div>        
 
             <div
               className={
-                'form-group' + (submitted && !event.desc ? ' has-error' : '')
+                'form-group' + (submitted && !event.imageUrl ? ' has-error' : '')
               }
             >
-              <label htmlFor="desc">Description</label>
-              <input
-                type="text"
-                className="form-control"
-                name="desc"
-                value={event.desc}
-                onChange={this.handleChange}
-              />
-              {submitted && !event.desc && (
-                <div className="help-block">A description is required</div>
-              )}
-            </div>
 
-            <div
-              className={
-                'form-group' + (submitted && !event.pic ? ' has-error' : '')
-              }
-            >
-              <label htmlFor="pic">Picture</label>
+    <Form.File id="formcheck-api-regular">
+      <Form.File.Label>Picture</Form.File.Label>
+      <Form.File.Input type="file"
+                id="upload_file"
+                className="form-control border-0 bg-transparent"
+                name="imageUrl"
+                value={event.imageUrl}
+                onChange={this.handleChange}/>
+    </Form.File>
+              {/* <label htmlFor="imageUrl">Picture</label>
               <input
                 type="file"
                 id="upload_file"
                 className="form-control"
-                name="pic"
-                value={event.pic}
+                name="imageUrl"
+                value={event.imageUrl}
                 onChange={this.handleChange}
-              />
-              {submitted && !event.pic && (
-                <div className="help-block">A picture is required</div>
-              )}
+              /> */}
             </div>
 
             <br />
@@ -197,11 +202,8 @@ function mapState(state) {
 }
 
 const actionCreators = {
-  register: userActions.register,
+  registerEvent: eventActions.create,
 }
 
-const connectedCreateEventPage = connect(
-  mapState,
-  actionCreators
-)(FormCreateEvent)
+const connectedCreateEventPage = connect(mapState, actionCreators)(FormCreateEvent)
 export { connectedCreateEventPage as FormCreateEvent }

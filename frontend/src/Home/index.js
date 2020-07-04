@@ -34,7 +34,7 @@ class Home extends React.Component {
 
         <div style={{display: 'grid', justifyContent: 'center'}}>
           <Row className="mb-5 w-100">
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/book.jpg"
                 title="Firma de Libros de Miguel Noguera"
@@ -44,7 +44,7 @@ class Home extends React.Component {
                 
               />
           </Col>
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/concierto.jpg"
                 title="Concierto de Calamaro"
@@ -53,7 +53,7 @@ class Home extends React.Component {
                 id="2"
               />
           </Col>
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/book.jpg"
                 title="Firma de Libros de Miguel Noguera"
@@ -64,7 +64,7 @@ class Home extends React.Component {
               />
           </Col>
 
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/concierto.jpg"
                 title="Concierto de Calamaro"
@@ -75,7 +75,7 @@ class Home extends React.Component {
           </Col>
         </Row>
         <Row className="mb-5 w-100">
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/concierto.jpg"
                 title="Concierto de Calamaro"
@@ -84,7 +84,7 @@ class Home extends React.Component {
                 id="2"
               />
           </Col>
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/book.jpg"
                 title="Firma de Libros de Miguel Noguera"
@@ -93,7 +93,7 @@ class Home extends React.Component {
                 id="1"
               />
           </Col>
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/concierto.jpg"
                 title="Concierto de Calamaro"
@@ -102,7 +102,7 @@ class Home extends React.Component {
                 id="2"
               />
           </Col>
-          <Col style={{maxWidth: '400px'}}>
+          <Col className="mw-25">
               <Card
                 src="/images/book.jpg"
                 title="Firma de Libros de Miguel Noguera"
