@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
 import { assets } from '../../_helpers/assets'
+import "./header.css"
 
 function logged() {
   return (localStorage.getItem('user') !== null)? true : false;
@@ -24,40 +25,37 @@ function Header() {
 
       <div className="p-2 bd-highlight">
         <NavBar>
-          {logged() &&
-            <HeaderLink to="/">
-              <FormattedMessage {...messages.home} />
-            </HeaderLink>
-          }
 
           {!logged() &&
-            <HeaderLink to="/login">
-              <FormattedMessage {...messages.SignIn} />
-            </HeaderLink>
+            <div>
+              <HeaderLink to="/login">
+                <FormattedMessage {...messages.SignIn} />
+              </HeaderLink>
+
+              <HeaderLink to="/register">
+                <FormattedMessage {...messages.SignUp} />
+              </HeaderLink>
+            </div>
           }
 
           {logged() &&
-            <HeaderLink to="/profile">
-              <FormattedMessage {...messages.Profile} />
-            </HeaderLink>
-          }
-          
-          {!logged() &&
-            <HeaderLink to="/register">
-              <FormattedMessage {...messages.SignUp} />
-            </HeaderLink>
-          }
+            <div>
+              <HeaderLink to="/">
+                <FormattedMessage {...messages.home} />
+              </HeaderLink>
 
-          {logged() &&
-            <HeaderLink to="/create-event">
-              <FormattedMessage {...messages.CreateEvent} />
-            </HeaderLink>
-          }
+              <HeaderLink to="/profile">
+                <FormattedMessage {...messages.Profile} />
+              </HeaderLink>
+              
+              <HeaderLink to="/create-event">
+                <FormattedMessage {...messages.CreateEvent} />
+              </HeaderLink>
 
-          {logged() &&
-            <HeaderLink to="/logout">
-              <FormattedMessage {...messages.LogOut} />
-            </HeaderLink>
+              <HeaderLink to="/logout" className="logout">
+                <FormattedMessage {...messages.LogOut} />
+              </HeaderLink>
+            </div>
           }
           
         </NavBar>
