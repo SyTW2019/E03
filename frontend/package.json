@@ -56,9 +56,6 @@
   "jest": {
     "modulePathIgnorePatterns": [
       "node_modules"
-    ],
-    "setupFiles": [
-      "browserMocks.js"
     ]
   }
 }
