@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.centrar {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+  text-align: center;
+  position: relative;
+  transform: translate(-50%, -3%);
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 5%;
+}
+
+/*
+.background {
+	background: rgb(174,229,238);
+background: radial-gradient(circle, rgba(174,229,238,1) 0%, rgba(25,111,212,1) 100%); 
+
+
+width: 100%;
+height: 100%;
+}
+
+
+label {
+	
+	font-size: 15px;
+}
+
+*/

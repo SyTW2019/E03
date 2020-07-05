@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import { IntlProvider } from 'react-intl'
 import { history } from '../_helpers'
 import { alertActions } from '../_actions'
-import { PrivateRoute } from '../_components/PrivateRoute'
-import { HomePage } from '../HomePage'
+import { LogoutPage } from '../LogoutPage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { Home } from '../Home'
@@ -13,7 +12,6 @@ import { Profile } from '../Profile'
 import { CreateEvent } from '../CreateEvent'
 import Header from '../_components/Header'
 import Footer from '../_components/Footer'
-import { Detail } from '../Detail'
 
 import './app.css'
 
@@ -57,13 +55,12 @@ class App extends React.Component {
                   {logged() && (
                     <div>
                       <Route exact path="/" component={Home} />
-                      <Route path="/detail" component={Detail} />
                       <Route
                         exact
                         path="/create-event"
                         component={CreateEvent}
                       />
-                      <Route exact path="/logout" component={HomePage} />
+                      <Route exact path="/logout" component={LogoutPage} />
                       <Route exact path="/profile" component={Profile} />
                       <Redirect from="*" to="/" />
                     </div>

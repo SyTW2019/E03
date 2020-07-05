@@ -31,7 +31,7 @@ class EventsProfile extends React.Component {
     const { user } = this.props
 
     return (
-      <div class="w-75 ml-5">
+      <div className="w-75 ml-5">
         <h1 className="mb-3"> Eventos </h1>
         <ul className="list-group overflow-auto" style={{ maxHeight: '450px' }}>
           {eventos
@@ -46,7 +46,7 @@ class EventsProfile extends React.Component {
               >
                 {' '}
                 {event.eventName}
-                <span class="badge badge-info badge-pill">
+                <span className="badge badge-info badge-pill">
                   {event.guests.length}
                 </span>
               </li>

@@ -134,35 +134,38 @@ class EventModal extends React.Component {
               </button>
 
               <div
-                class="modal fade"
+                className="modal fade"
                 id="modalDelete"
                 tabIndex="-1"
                 role="dialog"
                 aria-labelledby="modalDelete"
                 aria-hidden="true"
               >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modalDelete">
+                <div
+                  className="modal-dialog modal-dialog-centered"
+                  role="document"
+                >
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title" id="modalDelete">
                         Delete event
                       </h5>
                       <button
                         type="button"
-                        class="close"
+                        className="close"
                         data-dismiss="modal"
                         aria-label="Close"
                       >
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body my-3">
+                    <div className="modal-body my-3">
                       Are you sure you want to delete this event permanently?
                     </div>
-                    <div class="modal-footer d-flex justify-content-center">
+                    <div className="modal-footer d-flex justify-content-center">
                       <button
                         type="button"
-                        class="btn btn-danger"
+                        className="btn btn-danger"
                         onClick={() => {
                           this.props.deleteEvent(this.props.event.id)
                           setTimeout(function () {
@@ -174,7 +177,7 @@ class EventModal extends React.Component {
                       </button>
                       <button
                         type="button"
-                        class="btn btn-primary"
+                        className="btn btn-primary"
                         data-dismiss="modal"
                       >
                         No

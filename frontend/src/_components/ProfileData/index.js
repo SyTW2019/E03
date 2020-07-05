@@ -23,17 +23,17 @@ class ProfileData extends React.Component {
   render() {
     const { user } = this.props
     return (
-      <div class="w-50 mt-5 ml-5">
+      <div className="w-50 mt-5 ml-5">
         <h1> Username </h1>
-        <p class="mb-3 ml-1">{user.username}</p>
+        <p className="mb-3 ml-1">{user.username}</p>
 
         <h1> Name </h1>
-        <p class="mb-3 ml-1">
+        <p className="mb-3 ml-1">
           {user.firstName} {user.lastName}{' '}
         </p>
 
         <h1> Account creation date </h1>
-        <p class="mb-3 ml-1">{user.createdDate.split('T')[0]}</p>
+        <p className="mb-3 ml-1">{user.createdDate.split('T')[0]}</p>
       </div>
     )
   }

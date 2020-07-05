@@ -1,5 +1,5 @@
-# react-redux-registration-login-example
+# EventsFinder Front-end
 
-React + Redux - User Registration and Login Tutorial & Example
+Este es el directorio donde se encuentra todo el códgo desarrollado para la plataforma eventFinder.
 
-For documentation and further details go to http://jasonwatmore.com/post/2017/09/16/react-redux-user-registration-and-login-tutorial-example
+Para lanzar el servicio: npm run start

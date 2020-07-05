@@ -1,14 +1,15 @@
 # node-mongo-registration-login-api
 
-NodeJS + MongoDB API for User Management, Authentication and Registration
+Api rest para el uso de EventsFinder.
 
-For documentation and instructions check out http://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management
+## Pruebas
+
+Para lanzar el servicio npm start en local, teniendo en cuenta la necesidad de tener en segundo plano mongod service.
 
 ## Despliegue
 
-https://jasonwatmore.com/post/2018/12/06/deploy-to-heroku-node-mongo-api-for-authentication-registration-and-user-management
-
-https://medium.com/@timanovsky/heroku-buildpack-to-support-deployment-from-subdirectory-e743c2c838dd
+El despliegue del Backend se encuentra en los servidores heroku en la dirección:
+https://eventfinder-sytw.herokuapp.com/
 
 ## Events
 
