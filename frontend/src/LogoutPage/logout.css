@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-.centrar{
+.centrar_logout{
     display: flex;
     justify-content: center;
     text-align: center;
@@ -18,10 +18,6 @@
     border-radius: 5%;
 }
 
-button{
-    opacity: .3;
-    transition: opacity 300ms linear;
-}
 
 /*
 .background {
