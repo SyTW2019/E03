@@ -164,7 +164,7 @@ function unjoin(id) {
   return (dispatch) => {
     dispatch(request(id))
     eventService.unjoin(id).then(
-      (event) => {
+      (id) => {
         dispatch(success(id))
         dispatch(alertActions.success('Unjoined succesfully to the event'))
       },

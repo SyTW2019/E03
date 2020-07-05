@@ -37,9 +37,7 @@ function getById(id) {
   return fetch(`${config.apiUrl}/events/${id}`, requestOptions)
     .then(handleResponse)
     .then((event) => {
-      console.log(event)
       localStorage.setItem('event', JSON.stringify(event))
-      console.log(localStorage)
       return event
     })
 }
