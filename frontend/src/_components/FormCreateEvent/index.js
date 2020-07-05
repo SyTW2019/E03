@@ -56,9 +56,10 @@ class FormCreateEvent extends Component {
     const { event, submitted } = this.state
 
     return (
-      <div className="centrar">
+      <div className="centrar_event">
         <div className="col-md-6 col-md-offset-3">
-          <h2 className="mb-3">Create Event</h2>
+          <h2>Create Event</h2>
+          <hr></hr>
           <form name="form" onSubmit={this.handleSubmit}>
             <div
               className={
