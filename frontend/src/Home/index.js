@@ -16,20 +16,44 @@ class Home extends React.Component {
     this.state = {
       isOpen: false,
       selectedId: '5ef521d0a0c6d92e841cef0f',
+    
     }
     this.toggleModal = this.toggleModal.bind(this)
   }
+
   componentDidMount() {
     this.props.getEvents()
+
   }
   toggleModal() {
     this.setState({ isOpen: !this.state.isOpen })
+    console.log("eee" + this.state.isOpen)
   }
   render() {
-    const { event } = this.props
+    const eventos = this.props.events.event.events
     return (
        <Container fluid>
-        <div>
+         <div>
+         <Grid>
+            <Grid className="mb-5 ml-5">
+              <CustomizedMenus />
+            </Grid>
+            
+            <div className="ml-5">
+              <Row className="mb-5 w-100">
+              {eventos.map((event, index) => (
+                <Col style={{minWidth:"350px", maxWidth:"350px"}} key={index} className="mb-5">
+                  <Card src={event.imageUrl} title={event.eventName} fechaInicio={event.beginDate.split('T')[0]}
+                  descripcion={event.description} localizacion={event.location} id={event._id} 
+                  onClick={() => this.toggleModal()}
+                  key={index}>{JSON.stringify(event)}</Card>
+
+                </Col>
+              ))}
+              </Row>
+            </div>
+                  
+{/*         <div>
           <Grid>
             <Grid className="mb-5 ml-5">
               <CustomizedMenus />
@@ -116,21 +140,25 @@ class Home extends React.Component {
               </Row>
             </div>
           </Grid>
-        </div> 
+        </div>  */}
+        {this.state.isOpen && (
          <EventModal
           show={this.state.isOpen}
           onHide={this.toggleModal}
           id={this.state.selectedId}
-        ></EventModal> 
+        ></EventModal>) } 
+        </Grid>
+        </div>
       </Container>
     )
   }
 }
 
 function mapState(state) {
+  const { events } = state
   const { users, authentication } = state
   const { user } = authentication
-  return { user, users }
+  return { user, users, events }
 }
 
 const actionCreators = {

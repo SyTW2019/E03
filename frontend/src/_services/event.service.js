@@ -30,6 +30,10 @@ function getAll() {
     headers: authHeader(),
   }
   return fetch(`${config.apiUrl}/events`, requestOptions).then(handleResponse)
+   .then((events) => {
+     localStorage.setItem('events', JSON.stringify({events}))
+ 
+  }) 
 }
 
 function getById(id) {

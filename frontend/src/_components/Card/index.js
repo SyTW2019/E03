@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 })
 export default function ImgMediaCard(props) {
   const classes = useStyles()
-  const { title, src, fecha, desc } = props
+  const { title, src, fechaInicio, descripcion, localizacion } = props
   return (
     <Card className={classes.card} onClick={props.onClick}>
       <CardActionArea>
@@ -34,8 +34,12 @@ export default function ImgMediaCard(props) {
             {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {desc}
+            {descripcion}
           </Typography>
+          <br />
+          Lugar: {localizacion}
+          <br /> <br />
+          Fecha: {fechaInicio}
         </CardContent>
       </CardActionArea>
       <CardActions>

@@ -62,7 +62,7 @@ class EventModal extends React.Component {
           Unjoin
         </Button>
       )
-    return (
+      return (
       <Modal
         className=" mt-5"
         show={this.props.show}
@@ -126,6 +126,7 @@ class EventModal extends React.Component {
     )
   }
 }
+
 function mapState(state) {
   const { event } = state.eventInformation
   const { user } = state.authentication
