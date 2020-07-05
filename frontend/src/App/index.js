@@ -38,13 +38,17 @@ class App extends React.Component {
           <Router history={history}>
             <div>
               <Header />
-              <div class="main">
+              <div className="main">
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/login" component={LoginPage} />
                   <Route path="/register" component={RegisterPage} />
                   <Route path="/detail" component={Detail} />
-                  <PrivateRoute exact path="/create-event" component={CreateEvent} />
+                  <PrivateRoute
+                    exact
+                    path="/create-event"
+                    component={CreateEvent}
+                  />
                   <PrivateRoute exact path="/logout" component={HomePage} />
                   <PrivateRoute exact path="/profile" component={Profile} />
                   <Redirect from="*" to="/" />

@@ -13,7 +13,6 @@ class ProfileData extends React.Component {
 		  lastName: '',
 		  createdDate: '',
 		  component:'',
-		  usuarios: [],
 		  user:'',
 		}
 

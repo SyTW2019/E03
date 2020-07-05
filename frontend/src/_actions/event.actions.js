@@ -90,6 +90,7 @@ function getAll() {
 }
 function getInformation(id) {
   return (dispatch) => {
+    if (id == -1) return
     dispatch(request({ id }))
     eventService.getById(id).then(
       (events) => {
@@ -142,6 +143,7 @@ function join(id) {
     eventService.join(id).then(
       (id) => {
         dispatch(success(id))
+        dispatch(alertActions.success('Joined succesfully to the event'))
       },
       (error) => {
         dispatch(failure(error.toString()))
@@ -164,8 +166,9 @@ function unjoin(id) {
   return (dispatch) => {
     dispatch(request(id))
     eventService.unjoin(id).then(
-      (event) => {
+      (id) => {
         dispatch(success(id))
+        dispatch(alertActions.success('Unjoined succesfully to the event'))
       },
       (error) => {
         dispatch(failure(error.toString()))

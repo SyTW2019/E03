@@ -37,9 +37,12 @@ function getById(id) {
     method: 'GET',
     headers: authHeader(),
   }
-  return fetch(`${config.apiUrl}/events/${id}`, requestOptions).then(
-    handleResponse
-  )
+  return fetch(`${config.apiUrl}/events/${id}`, requestOptions)
+    .then(handleResponse)
+    .then((event) => {
+      localStorage.setItem('event', JSON.stringify(event))
+      return event
+    })
 }
 function update(event) {
   let headers = authHeader()

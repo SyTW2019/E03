@@ -39,13 +39,13 @@ function update(req, res, next) {
 function join(req, res, next) {
   userService
     .join(req.params.id, req.user.sub)
-    .then(() => res.json({}))
+    .then(() => res.json({ id: req.user.sub }))
     .catch((err) => next(err))
 }
 function unjoin(req, res, next) {
   userService
     .unjoin(req.params.id, req.user.sub)
-    .then(() => res.json({}))
+    .then(() => res.json({ id: req.user.sub }))
     .catch((err) => next(err))
 }
 function _delete(req, res, next) {
