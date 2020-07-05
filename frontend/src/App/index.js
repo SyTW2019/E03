@@ -5,7 +5,7 @@ import { IntlProvider } from 'react-intl'
 import { history } from '../_helpers'
 import { alertActions } from '../_actions'
 import { PrivateRoute } from '../_components/PrivateRoute'
-import { HomePage } from '../HomePage'
+import { HomePage } from '../LogoutPage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
 import { PaginaPrincipal } from '../PaginaPrincipal'
@@ -44,7 +44,11 @@ class App extends React.Component {
                   <Route path="/login" component={LoginPage} />
                   <Route path="/register" component={RegisterPage} />
                   <Route path="/detail" component={Detail} />
-                  <PrivateRoute exact path="/create-event" component={CreateEvent} />
+                  <PrivateRoute
+                    exact
+                    path="/create-event"
+                    component={CreateEvent}
+                  />
                   <PrivateRoute exact path="/logout" component={HomePage} />
                   <PrivateRoute exact path="/profile" component={Profile} />
                   <Redirect from="*" to="/" />

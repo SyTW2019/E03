@@ -55,6 +55,8 @@
     "modulePathIgnorePatterns": [
       "node_modules"
     ],
-    "setupFiles": ["browserMocks.js"]
+    "setupFiles": [
+      "browserMocks.js"
+    ]
   }
 }
