@@ -15,7 +15,8 @@ class Home extends React.Component {
     super(props)
     this.state = {
       isOpen: false,
-      selectedId: '5ef521d0a0c6d92e841cef0f',
+      selectedId: '5f00c1968967417d9bf91596',
+      eventos: undefined,
     
     }
     this.toggleModal = this.toggleModal.bind(this)
@@ -25,12 +26,25 @@ class Home extends React.Component {
     this.props.getEvents()
 
   }
-  toggleModal() {
-    this.setState({ isOpen: !this.state.isOpen })
-    console.log("eee" + this.state.isOpen)
+  componentWillMount(){
+    let eventos;
+    if(this.props.events.event.events == 'undefined'){
+      eventos = this.props;
+    } else {
+      eventos = this.props.events.event.events
+    }
+    this.setState({eventos});
   }
+
+  toggleModal(id) {
+    this.setState({ isOpen: !this.state.isOpen })
+    this.setState({ selectedId: id })
+
+  }
+  
   render() {
-    const eventos = this.props.events.event.events
+    const eventos = this.state.eventos
+
     return (
        <Container fluid>
          <div>
@@ -38,109 +52,22 @@ class Home extends React.Component {
             <Grid className="mb-5 ml-5">
               <CustomizedMenus />
             </Grid>
-            
+
+            {eventos && (
             <div className="ml-5">
               <Row className="mb-5 w-100">
               {eventos.map((event, index) => (
                 <Col style={{minWidth:"350px", maxWidth:"350px"}} key={index} className="mb-5">
                   <Card src={event.imageUrl} title={event.eventName} fechaInicio={event.beginDate.split('T')[0]}
                   descripcion={event.description} localizacion={event.location} id={event._id} 
-                  onClick={() => this.toggleModal()}
+                  onClick={() => this.toggleModal(event.id)}
                   key={index}>{JSON.stringify(event)}</Card>
 
                 </Col>
               ))}
               </Row>
-            </div>
+            </div>)}
                   
-{/*         <div>
-          <Grid>
-            <Grid className="mb-5 ml-5">
-              <CustomizedMenus />
-            </Grid>
-
-            <div style={{ display: 'grid', justifyContent: 'center' }}>
-              <Row className="mb-5 w-100">
-                <Col className="mw-25">
-                  <Card
-                    src="/images/book.jpg"
-                    title="Firma de Libros de Miguel Noguera"
-                    fecha="8 de Septiembre"
-                    desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-                    id="1"
-                    onClick={() => this.toggleModal()}
-                  />
-                </Col>
-                <Col className="mw-25">
-                  <Card
-                    src="/images/concierto.jpg"
-                    title="Concierto de Calamaro"
-                    fecha="7 de Julio"
-                    desc="Concierto del año en las Teresitas, Santa Cruz de Tenerife."
-                    id="2"
-                  />
-                </Col>
-                <Col className="mw-25">
-                  <Card
-                    src="/images/book.jpg"
-                    title="Firma de Libros de Miguel Noguera"
-                    fecha="8 de Septiembre"
-                    desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-                    id="1"
-                  />
-                </Col>
-
-                <Col className="mw-25">
-                  <Card
-                    src="/images/concierto.jpg"
-                    title="Concierto de Calamaro"
-                    fecha="7 de Julio"
-                    desc="Concierto del año en las Teresitas, Santa Cruz de Tenerife."
-                    id="2"
-                  />
-                </Col>
-              </Row>
-              <Row className="mw-25">
-                <Col style={{ maxWidth: '400px' }}>
-                  <Card
-                    src="/images/concierto.jpg"
-                    title="Concierto de Calamaro"
-                    fecha="7 de Julio"
-                    desc="Concierto del año en las Teresitas, Santa Cruz de Tenerife."
-                    id="2"
-                  />
-                </Col>
-                <Col className="mw-25">
-                  <Card
-                    src="/images/book.jpg"
-                    title="Firma de Libros de Miguel Noguera"
-                    fecha="8 de Septiembre"
-                    desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-                    id="1"
-                  />
-                </Col>
-                <Col className="mw-25">
-                  <Card
-                    src="/images/concierto.jpg"
-                    title="Concierto de Calamaro"
-                    fecha="7 de Julio"
-                    desc="Concierto del año en las Teresitas, Santa Cruz de Tenerife."
-                    id="2"
-                  />
-                </Col>
-                <Col className="mw-25">
-                  <Card
-                    src="/images/book.jpg"
-                    title="Firma de Libros de Miguel Noguera"
-                    fecha="8 de Septiembre"
-                    desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
-                    id="1"
-                  />
-                </Col>
-              </Row>
-            </div>
-          </Grid>
-        </div>  */}
         {this.state.isOpen && (
          <EventModal
           show={this.state.isOpen}
@@ -150,6 +77,7 @@ class Home extends React.Component {
         </Grid>
         </div>
       </Container>
+    
     )
   }
 }

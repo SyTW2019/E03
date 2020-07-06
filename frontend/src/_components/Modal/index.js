@@ -15,7 +15,9 @@ class EventModal extends React.Component {
   componentDidMount() {
     this.props.getEvent(this.props.id)
     this.traslateCreator(this.props.event.creator)
+    
   }
+
   // componentDidUpdate(prevProps) {
   //   // Typical usage (don't forget to compare props):
   //   if (this.props.event.creator !== prevProps.event.creator) {
