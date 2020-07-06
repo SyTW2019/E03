@@ -13,12 +13,12 @@ export const eventService = {
 
 function create(event) {
   let headers = authHeader()
-  headers["Content-Type"] = "application/json"
+  headers['Content-Type'] = 'application/json'
 
   const requestOptions = {
     method: 'POST',
     headers: headers,
-    body: JSON.stringify({event}),
+    body: JSON.stringify({ event }),
   }
   return fetch(`${config.apiUrl}/events/new`, requestOptions).then(
     handleResponse
@@ -29,11 +29,11 @@ function getAll() {
     method: 'GET',
     headers: authHeader(),
   }
-  return fetch(`${config.apiUrl}/events`, requestOptions).then(handleResponse)
-   .then((events) => {
-     localStorage.setItem('events', JSON.stringify({events}))
- 
-  }) 
+  return fetch(`${config.apiUrl}/events`, requestOptions)
+    .then(handleResponse)
+    .then((events) => {
+      localStorage.setItem('events', JSON.stringify({ events }))
+    })
 }
 
 function getById(id) {
@@ -50,7 +50,7 @@ function getById(id) {
 }
 function update(event) {
   let headers = authHeader()
-  headers["Content-Type"] = "application/json"
+  headers['Content-Type'] = 'application/json'
 
   const requestOptions = {
     method: 'PUT',

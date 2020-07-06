@@ -18,7 +18,6 @@ class FormCreateEvent extends Component {
         description: '',
         location: '',
         imageUrl: '',
-
       },
       submitted: false,
     }
@@ -42,7 +41,12 @@ class FormCreateEvent extends Component {
     e.preventDefault()
     this.setState({ submitted: true })
     const { event } = this.state
-    if (event.eventName && event.beginDate && event.description && event.location) {
+    if (
+      event.eventName &&
+      event.beginDate &&
+      event.description &&
+      event.location
+    ) {
       this.props.create(event)
     }
   }
@@ -96,7 +100,8 @@ class FormCreateEvent extends Component {
 
             <div
               className={
-                'form-group' + (submitted && !event.description ? ' has-error' : '')
+                'form-group' +
+                (submitted && !event.description ? ' has-error' : '')
               }
             >
               <label htmlFor="description">Description</label>
@@ -133,8 +138,7 @@ class FormCreateEvent extends Component {
 
             <div
               className={
-                'form-group' +
-                (submitted && !event.endDate ? ' has-error' : '')
+                'form-group' + (submitted && !event.endDate ? ' has-error' : '')
               }
             >
               <label htmlFor="endDate">End date</label>
@@ -145,23 +149,25 @@ class FormCreateEvent extends Component {
                 value={event.endDate}
                 onChange={this.handleChange}
               />
-            </div>        
+            </div>
 
             <div
               className={
-                'form-group' + (submitted && !event.imageUrl ? ' has-error' : '')
+                'form-group' +
+                (submitted && !event.imageUrl ? ' has-error' : '')
               }
             >
-
-            <Form.File id="formcheck-api-regular">
-              <Form.File.Label>Picture</Form.File.Label>
-              <Form.File.Input type="file"
-                        id="upload_file"
-                        className="form-control border-0 bg-transparent"
-                        name="imageUrl"
-                        value={event.imageUrl}
-                        onChange={this.handleChange}/>
-            </Form.File>
+              <Form.File id="formcheck-api-regular">
+                <Form.File.Label>Picture</Form.File.Label>
+                <Form.File.Input
+                  type="file"
+                  id="upload_file"
+                  className="form-control border-0 bg-transparent"
+                  name="imageUrl"
+                  value={event.imageUrl}
+                  onChange={this.handleChange}
+                />
+              </Form.File>
               {/* <label htmlFor="imageUrl">Picture</label>
               <input
                 type="file"
@@ -195,8 +201,10 @@ function mapState(state) {
 
 const actionCreators = {
   create: eventActions.create,
-  
 }
 
-const connectedCreateEventPage = connect(mapState, actionCreators)(FormCreateEvent)
+const connectedCreateEventPage = connect(
+  mapState,
+  actionCreators
+)(FormCreateEvent)
 export { connectedCreateEventPage as FormCreateEvent }

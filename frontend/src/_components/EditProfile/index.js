@@ -58,9 +58,9 @@ class EditProfile extends React.Component {
     const { changeUser } = this.state
 
     return (
-      <div class="w-50 mt-5 ml-5">
-        <div className="centrar">
-          <div className="col-md-6 col-md-offset-3">
+      <div class="w-100 ml-5">
+        <div className="centrar w-50">
+          <div className="col-md-8 col-md-offset-3">
             <h2 className="mb-2">Editar datos del perfil</h2>
 
             <form name="form" onSubmit={this.handleSubmit}>

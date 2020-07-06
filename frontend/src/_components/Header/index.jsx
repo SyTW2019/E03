@@ -12,7 +12,7 @@ function logged() {
 
 function Header() {
   return (
-    <div className="d-flex border-bottom mb-5 mt-2 align-items-center">
+    <div className="d-flex align-items-center">
       <div className="bd-highlight justify-content-start ml-4 mr-2">
         <img
           src={assets('/images/logo.png')}

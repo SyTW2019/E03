@@ -18,9 +18,9 @@ async function getById(id) {
   return await Event.findById(id).select('-__v')
 }
 async function create(params, creator) {
-  let {event} = params
+  let { event } = params
   event.creator = creator
-  
+
   event = new Event(event)
   await event.save()
 }

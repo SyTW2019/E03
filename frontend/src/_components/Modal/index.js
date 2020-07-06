@@ -15,7 +15,6 @@ class EventModal extends React.Component {
   componentDidMount() {
     this.props.getEvent(this.props.id)
     this.traslateCreator(this.props.event.creator)
-    
   }
 
   // componentDidUpdate(prevProps) {
@@ -65,7 +64,7 @@ class EventModal extends React.Component {
           Unjoin
         </Button>
       )
-      return (
+    return (
       <Modal
         className=" mt-5"
         show={this.props.show}
@@ -123,20 +122,37 @@ class EventModal extends React.Component {
               </div>
             </Modal.Body>
             <Modal.Footer className="d-flex justify-content-between">
-              <button type="button" className="btn btn-danger"
+              <button
+                type="button"
+                className="btn btn-danger"
                 /* onClick={() => {
                   this.props.deleteEvent(this.props.event.id)
-                }} */data-toggle="modal" data-target="#modalDelete"
+                }} */ data-toggle="modal"
+                data-target="#modalDelete"
               >
                 Delete event
               </button>
 
-              <div class="modal fade" id="modalDelete" tabIndex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+              <div
+                class="modal fade"
+                id="modalDelete"
+                tabIndex="-1"
+                role="dialog"
+                aria-labelledby="modalDelete"
+                aria-hidden="true"
+              >
                 <div class="modal-dialog modal-dialog-centered" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modalDelete">Delete event</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <h5 class="modal-title" id="modalDelete">
+                        Delete event
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
@@ -144,16 +160,32 @@ class EventModal extends React.Component {
                       Are you sure you want to delete this event permanently?
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
-                      <button type="button" class="btn btn-danger" 
-                      onClick={() => {this.props.deleteEvent(this.props.event.id); setTimeout(function(){window.location.reload();},500);}} >Yes
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        onClick={() => {
+                          this.props.deleteEvent(this.props.event.id)
+                          setTimeout(function () {
+                            window.location.reload()
+                          }, 500)
+                        }}
+                      >
+                        Yes
                       </button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-dismiss="modal"
+                      >
+                        No
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-              
-            {button}</Modal.Footer>
+
+              {button}
+            </Modal.Footer>
           </React.Fragment>
         )}
       </Modal>

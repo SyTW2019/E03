@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
   users,
   alert,
   eventInformation,
-  events
+  events,
 })
 
 export default rootReducer

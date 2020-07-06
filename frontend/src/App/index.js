@@ -35,49 +35,46 @@ class App extends React.Component {
     const { alert } = this.props
     return (
       <IntlProvider locale="en">
-        <div>
-          {alert.message && (
-            <div className={`alert ${alert.type}`}>{alert.message}</div>
-          )}
-          <Router history={history}>
-            <div>
-              <Header />
-              <div className="main">
-                <Switch>
-                  <React.Fragment>
-                    {!logged() && (
-                      <div>
-                        <Route exact path="/">
-                          <Redirect to="/login" />
-                        </Route>
-                        <Route path="/login" component={LoginPage} />
-                        <Route path="/register" component={RegisterPage} />
-                        <Redirect from="*" to="/login" />
-                      </div>
-                    )}
-                    {logged() && (
-                      <div>
-                        <Route exact path="/" component={Home} />
-                        <Route path="/detail" component={Detail} />
-                        <Route
-                          exact
-                          path="/create-event"
-                          component={CreateEvent}
-                        />
-                        <Route exact path="/logout" component={HomePage} />
-                        <Route exact path="/profile" component={Profile} />
-                        <Redirect from="*" to="/" />
-                      </div>
-                    )}
-                  </React.Fragment>
-                </Switch>
-              </div>
+        {alert.message && (
+          <div className={`alert ${alert.type}`}>{alert.message}</div>
+        )}
+        <Router history={history}>
+          <div>
+            <Header className="bg-white" />
+            <div className="main">
+              <Switch>
+                <React.Fragment>
+                  {!logged() && (
+                    <div>
+                      <Route exact path="/">
+                        <Redirect to="/login" />
+                      </Route>
+                      <Route path="/login" component={LoginPage} />
+                      <Route path="/register" component={RegisterPage} />
+                      <Redirect from="*" to="/login" />
+                    </div>
+                  )}
+                  {logged() && (
+                    <div>
+                      <Route exact path="/" component={Home} />
+                      <Route path="/detail" component={Detail} />
+                      <Route
+                        exact
+                        path="/create-event"
+                        component={CreateEvent}
+                      />
+                      <Route exact path="/logout" component={HomePage} />
+                      <Route exact path="/profile" component={Profile} />
+                      <Redirect from="*" to="/" />
+                    </div>
+                  )}
+                </React.Fragment>
+              </Switch>
             </div>
-            <div>
-              <Footer />
-            </div>
-          </Router>
-        </div>
+          </div>
+
+          <Footer />
+        </Router>
       </IntlProvider>
     )
   }

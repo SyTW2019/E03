@@ -15,13 +15,7 @@
   text-decoration: none;
 }
 
-
-/* Main content */
-.main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
-}
-
-.logout{
+.logout {
   position: absolute;
   right: 0px;
 }

@@ -14,7 +14,6 @@ export const eventActions = {
 }
 
 function create(event) {
-
   return (dispatch) => {
     dispatch(request(event))
 
