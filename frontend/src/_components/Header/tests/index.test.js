@@ -6,29 +6,9 @@ import Header from '../index.jsx'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router'
 
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
+import { LocalStorageMock } from "../../../../localStorageMock"
 
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = value.toString();
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-};
-
-global.localStorage = new LocalStorageMock;
+global.localStorage = LocalStorageMock;
 
 configure({ adapter: new Adapter() })
 

@@ -16,10 +16,6 @@ global.window = window
 global.document = window.document
 
 describe('<Wrapper />', () => {
-  it('should render an <footer> tag', () => {
-    const { container } = render(<Wrapper />)
-    expect(container.querySelector('footer')).not.toBeNull()
-  })
 
   it('should have a class attribute', () => {
     const { container } = render(<Wrapper />)

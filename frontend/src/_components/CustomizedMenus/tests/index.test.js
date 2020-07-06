@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer'
 import { mount, configure } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Footer from '../index'
+import CustomizedMenus from '../index'
 
 configure({ adapter: new Adapter() })
 
@@ -15,14 +15,15 @@ const { window } = dom
 global.window = window
 global.document = window.document
 
-describe('<Footer />', () => {
-  test('Comprobar que se renderiza Footer', () => {
-    const wrapper = mount(<Footer />)
-    expect(wrapper.find(Footer)).toHaveLength(1)
-  })
+describe('<CustomizedMenus />', () => {
+
+  it('Comprobar que se renderiza CustomizedMenus', () => {
+    const wrapper = mount(<CustomizedMenus />)
+    expect(wrapper.find(CustomizedMenus)).toHaveLength(1)
+  });
 
   it('Snapshot', () => {  
-    const Component = renderer.create(<Footer />).toJSON();
+    const Component = renderer.create(<CustomizedMenus />).toJSON();
     expect(Component).toMatchSnapshot();
   });
 })
