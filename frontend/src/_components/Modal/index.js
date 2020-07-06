@@ -145,7 +145,7 @@ class EventModal extends React.Component {
                     </div>
                     <div class="modal-footer d-flex justify-content-center">
                       <button type="button" class="btn btn-danger" 
-                      onClick={() => {this.props.deleteEvent(this.props.event.id); window.location.reload();}} >Yes
+                      onClick={() => {this.props.deleteEvent(this.props.event.id); setTimeout(function(){window.location.reload();},500);}} >Yes
                       </button>
                       <button type="button" class="btn btn-primary" data-dismiss="modal">No</button>
                     </div>

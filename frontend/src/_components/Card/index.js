@@ -26,7 +26,7 @@ export default function ImgMediaCard(props) {
           component="img"
           alt={title}
           height="140"
-          image={assets(src)}
+          image={assets('/images/book.jpg')}
           title={title}
         />
         <CardContent>
@@ -42,21 +42,6 @@ export default function ImgMediaCard(props) {
           Fecha: {fechaInicio}
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button
-          onClick={() => {
-            const name = 'Carmen'
-            console.log('Hello ' + name)
-          }}
-          size="small"
-          color="primary"
-        >
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   )
 }

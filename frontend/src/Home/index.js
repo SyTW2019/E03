@@ -9,6 +9,7 @@ import CustomizedMenus from '../_components/CustomizedMenus'
 import { eventActions } from '../_actions'
 import { connect } from 'react-redux'
 import { EventModal } from '../_components/Modal'
+import { assets } from '../_helpers/assets'
 
 class Home extends React.Component {
   constructor(props) {
@@ -49,16 +50,17 @@ class Home extends React.Component {
        <Container fluid>
          <div>
          <Grid>
+{/*Botón de categorías
             <Grid className="mb-5 ml-5">
               <CustomizedMenus />
-            </Grid>
+            </Grid> */}
 
             {eventos && (
             <div className="ml-5">
               <Row className="mb-5 w-100">
               {eventos.map((event, index) => (
                 <Col style={{minWidth:"350px", maxWidth:"350px"}} key={index} className="mb-5">
-                  <Card src={event.imageUrl} title={event.eventName} fechaInicio={event.beginDate.split('T')[0]}
+                  <Card src={assets('/images/book.jpg')} title={event.eventName} fechaInicio={event.beginDate.split('T')[0]}
                   descripcion={event.description} localizacion={event.location} id={event._id} 
                   onClick={() => this.toggleModal(event.id)}
                   key={index}>{JSON.stringify(event)}</Card>

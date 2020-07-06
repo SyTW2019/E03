@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import ProfileData from '../_components/ProfileData'
 import EditProfile from '../_components/EditProfile'
 import EventsProfile from '../_components/EventsProfile'
-import InterestsProfile from '../_components/InterestsProfile'
 
 class Profile extends React.Component {
 	constructor(props) {
@@ -75,7 +74,6 @@ class Profile extends React.Component {
 							<button onClick={this.userData} type="button" className="btn btn-outline-dark rounded mb-2"> Datos relevantes del usuario</button>
 							<button onClick={this.editProfile} type="button" className="btn btn-outline-dark rounded mb-2">Editar información</button>
 							<button onClick={this.events} type="button" className="btn btn-outline-dark rounded mb-2">Eventos</button>
-							<button onClick={this.interests} type="button" className="btn btn-outline-dark rounded mb-2">Intereses</button>
 						</div>
 					</div>
 
@@ -85,7 +83,6 @@ class Profile extends React.Component {
 			{component == "datauser" && <ProfileData /> }
 			{component == "editprofile" && <EditProfile /> }
 			{component == "events" && <EventsProfile /> }
-			{component == "interests" && <InterestsProfile /> }
 		</div>
 		
 
