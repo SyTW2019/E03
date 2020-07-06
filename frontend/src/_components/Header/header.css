@@ -3,8 +3,6 @@
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  
-  
 }
 
 /* Links inside the navbar */
@@ -17,15 +15,7 @@
   text-decoration: none;
 }
 
-
-/* Main content */
-.main {
- 
-  margin-top: 30px; }/* Add a top margin to avoid content overlay */
-  
-
-
-.logout{
+.logout {
   position: absolute;
   right: 0px;
 }

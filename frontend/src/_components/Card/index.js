@@ -18,15 +18,15 @@ const useStyles = makeStyles({
 })
 export default function ImgMediaCard(props) {
   const classes = useStyles()
-  const { title, src, fecha, desc } = props
+  const { title, src, fechaInicio, descripcion, localizacion } = props
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} onClick={props.onClick}>
       <CardActionArea>
         <CardMedia
           component="img"
           alt={title}
           height="140"
-          image={assets(src)}
+          image={assets('/images/book.jpg')}
           title={title}
         />
         <CardContent>
@@ -34,25 +34,14 @@ export default function ImgMediaCard(props) {
             {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {desc}
+            {descripcion}
           </Typography>
+          <br />
+          Lugar: {localizacion}
+          <br /> <br />
+          Fecha: {fechaInicio}
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button
-          onClick={() => {
-            const name = 'Carmen'
-            console.log('Hello ' + name)
-          }}
-          size="small"
-          color="primary"
-        >
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
   )
 }

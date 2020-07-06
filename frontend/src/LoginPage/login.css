@@ -1,35 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-
-
-
 .center {
- 
-
-
-font-family: 'Roboto', Arial, Helvetica, sans-serif;	
-        display: flex;
-	justify-content: center;	
+  display: flex;
+  justify-content: center;
   width: 40%;
   text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0%);
   padding: 15px;
   background-color: white;
-  box-shadow: 0 0 20px 2px black;/*rgba(44, 130, 201, 1);/*rgba(0, 0, 0, 0.4);*/
+  box-shadow: 0 0 20px 2px black; /*rgba(44, 130, 201, 1);/*rgba(0, 0, 0, 0.4);*/
   border-radius: 5%;
-	
 }
-
-
-
 
 label {
-	
-	font-size: 15px;
+  font-size: 15px;
 }
-
-
-
-
-

@@ -21,9 +21,7 @@ function login(username, password) {
   return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
     .then(handleResponse)
     .then((user) => {
-      // store user details and jwt token in local storage to keep user logged in between page refreshes
       localStorage.setItem('user', JSON.stringify(user))
-
       return user
     })
 }
@@ -72,10 +70,9 @@ function update(user) {
     body: JSON.stringify(user),
   }
 
-  return fetch(`${config.apiUrl}/users/${user._id}`, requestOptions).then(
-    handleResponse
-  )
-  .catch(param => console.log(param))
+  return fetch(`${config.apiUrl}/users/${user._id}`, requestOptions)
+    .then(handleResponse)
+    .catch((param) => console.log(param))
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
@@ -101,8 +98,8 @@ function handleResponse(response) {
         location.reload(true)
       }
 
-      if(response.status === 400){
-        alert("Contraseña incorrecta");
+      if (response.status === 400) {
+        alert('Contraseña incorrecta')
       }
 
       const error = (data && data.message) || response.statusText
