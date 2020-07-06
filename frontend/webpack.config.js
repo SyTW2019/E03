@@ -36,7 +36,7 @@ module.exports = {
   externals: {
     // global app config object
     config: JSON.stringify({
-      apiUrl: 'https://eventfinder-sytw.herokuapp.com/',
+      apiUrl: 'https://eventfinder-sytw.herokuapp.com',
     }),
   },
   watchOptions: {
