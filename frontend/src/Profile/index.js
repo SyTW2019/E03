@@ -12,19 +12,13 @@ class Profile extends React.Component {
 		super(props)
 		
 		this.state = {
-		  username: '',
-		  password: '',
-		  firstName: '',
-		  lastName: '',
-		  createdDate: '',
 		  component:'',
-		  user:'',
+		  
 		}
 	
 		this.userData = this.userData.bind(this)
 		this.editProfile = this.editProfile.bind(this)
 		this.events = this.events.bind(this)
-		this.interests = this.interests.bind(this)
 
 	}
 	componentDidMount() {
@@ -42,15 +36,9 @@ class Profile extends React.Component {
 	events(){
 		this.setState({component: "events"});
 	}
-
-	interests(){
-		this.setState({component: "interests"});
-	}
 	
 	render() {
 	 const component = this.state.component;
-/* 	 const usuarios = this.componentDidMount();
- */	 const { user, users } = this.props
 
 	 return(
 
