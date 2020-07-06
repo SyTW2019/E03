@@ -17,69 +17,68 @@ class Home extends React.Component {
     this.state = {
       isOpen: false,
       selectedId: '5f00c1968967417d9bf91596',
-      eventos: undefined,
-    
+      eventos: [],
     }
     this.toggleModal = this.toggleModal.bind(this)
   }
 
   componentDidMount() {
     this.props.getEvents()
-
-  }
-  componentWillMount(){
-    let eventos;
-    if(this.props.events.event.events == 'undefined'){
-      eventos = this.props;
-    } else {
-      eventos = this.props.events.event.events
+    if (this.props.events) {
+      let eventos = this.props.events.event.events
+      this.setState({ eventos })
     }
-    this.setState({eventos});
   }
 
   toggleModal(id) {
     this.setState({ isOpen: !this.state.isOpen })
     this.setState({ selectedId: id })
-
   }
-  
+
   render() {
     const eventos = this.state.eventos
 
     return (
-       <Container fluid>
-         <div>
-         <Grid>
-{/*Botón de categorías
-            <Grid className="mb-5 ml-5">
-              <CustomizedMenus />
-            </Grid> */}
-
+      <Container fluid>
+        <div>
+          <Grid>
             {eventos && (
-            <div className="ml-5">
-              <Row className="mb-5 w-100">
-              {eventos.map((event, index) => (
-                <Col style={{minWidth:"350px", maxWidth:"350px"}} key={index} className="mb-5">
-                  <Card src={assets('/images/book.jpg')} title={event.eventName} fechaInicio={event.beginDate.split('T')[0]}
-                  descripcion={event.description} localizacion={event.location} id={event._id} 
-                  onClick={() => this.toggleModal(event.id)}
-                  key={index}>{JSON.stringify(event)}</Card>
+              <div className="ml-5">
+                <Row className="mb-5 w-100">
+                  {eventos.map((event, index) => (
+                    <Col
+                      style={{ minWidth: '350px', maxWidth: '350px' }}
+                      key={index}
+                      className="mb-5"
+                    >
+                      <Card
+                        src={assets('/images/book.jpg')}
+                        title={event.eventName}
+                        fechaInicio={event.beginDate.split('T')[0]}
+                        descripcion={event.description}
+                        localizacion={event.location}
+                        id={event._id}
+                        onClick={() => this.toggleModal(event.id)}
+                        key={index}
+                      >
+                        {JSON.stringify(event)}
+                      </Card>
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            )}
 
-                </Col>
-              ))}
-              </Row>
-            </div>)}
-                  
-        {this.state.isOpen && (
-         <EventModal
-          show={this.state.isOpen}
-          onHide={this.toggleModal}
-          id={this.state.selectedId}
-        ></EventModal>) } 
-        </Grid>
+            {this.state.isOpen && (
+              <EventModal
+                show={this.state.isOpen}
+                onHide={this.toggleModal}
+                id={this.state.selectedId}
+              ></EventModal>
+            )}
+          </Grid>
         </div>
       </Container>
-    
     )
   }
 }
