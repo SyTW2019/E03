@@ -17,6 +17,10 @@ import { Detail } from '../Detail'
 
 import './app.css'
 
+function logged() {
+  return localStorage.getItem('user') !== null ? true : false
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -40,18 +44,30 @@ class App extends React.Component {
               <Header />
               <div className="main">
                 <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/login" component={LoginPage} />
-                  <Route path="/register" component={RegisterPage} />
-                  <Route path="/detail" component={Detail} />
-                  <PrivateRoute
-                    exact
-                    path="/create-event"
-                    component={CreateEvent}
-                  />
-                  <PrivateRoute exact path="/logout" component={HomePage} />
-                  <PrivateRoute exact path="/profile" component={Profile} />
-                  <Redirect from="*" to="/" />
+                  {!logged() && (
+                    <div>
+                      <Route exact path="/">
+                        <Redirect to="/login" />
+                      </Route>
+                      <Route path="/login" component={LoginPage} />
+                      <Route path="/register" component={RegisterPage} />
+                      <Redirect from="*" to="/login" />
+                    </div>
+                  )}
+                  {logged() && (
+                    <div>
+                      <Route exact path="/" component={Home} />
+                      <Route path="/detail" component={Detail} />
+                      <Route
+                        exact
+                        path="/create-event"
+                        component={CreateEvent}
+                      />
+                      <Route exact path="/logout" component={HomePage} />
+                      <Route exact path="/profile" component={Profile} />
+                      <Redirect from="*" to="/" />
+                    </div>
+                  )}
                 </Switch>
               </div>
             </div>
