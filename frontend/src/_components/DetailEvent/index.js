@@ -14,15 +14,15 @@ export class DetailEvent extends Component {
           image={assets(src)}
           title={title}
         />
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">{title}</p>
-              <p class="subtitle is-6">{fecha}</p>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-content">
+              <p className="title is-4">{title}</p>
+              <p className="subtitle is-6">{fecha}</p>
             </div>
           </div>
 
-          <div class="content">{desc}</div>
+          <div className="content">{desc}</div>
         </div>
       </div>
     )

@@ -50,7 +50,7 @@ function register(user) {
 
     userService.register(user).then(
       (user) => {
-        dispatch(success())
+        dispatch(success(user))
         history.push('/login')
         dispatch(alertActions.success('Registration successful'))
       },
@@ -120,7 +120,7 @@ function _delete(id) {
     dispatch(request(id))
 
     userService.delete(id).then(
-      (user) => dispatch(success(id)),
+      (user) => dispatch(success(user)),
       (error) => dispatch(failure(id, error.toString()))
     )
   }

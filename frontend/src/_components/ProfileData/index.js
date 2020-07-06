@@ -13,17 +13,16 @@ class ProfileData extends React.Component {
 		  lastName: '',
 		  createdDate: '',
 		  component:'',
-		  usuarios: [],
 		  user:'',
 		}
 
 	}
   componentDidMount() {
-		this.props.getUsers()
-	  }
-
+    this.props.getUsers()
+    }
+    
     render() {
-      const { user, users } = this.props
+      const { user } = this.props
       return (
         <div class="w-50 mt-5 ml-5"> 
 
@@ -43,8 +42,9 @@ class ProfileData extends React.Component {
 }
 
 function mapState(state) {
-	const { users, authentication } = state
-	const { user } = authentication
+  const { users, authentication } = state
+  const { user } = authentication
+
 	return { user, users }
   }
   

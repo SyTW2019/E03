@@ -4,10 +4,10 @@ import NavBar from './NavBar'
 import HeaderLink from './HeaderLink'
 import messages from './messages'
 import { assets } from '../../_helpers/assets'
-import "./header.css"
+import './header.css'
 
 function logged() {
-  return (localStorage.getItem('user') !== null)? true : false;
+  return localStorage.getItem('user') !== null ? true : false
 }
 
 function Header() {
@@ -25,8 +25,7 @@ function Header() {
 
       <div className="p-2 bd-highlight">
         <NavBar>
-
-          {!logged() &&
+          {!logged() && (
             <div>
               <HeaderLink to="/login">
                 <FormattedMessage {...messages.SignIn} />
@@ -36,9 +35,9 @@ function Header() {
                 <FormattedMessage {...messages.SignUp} />
               </HeaderLink>
             </div>
-          }
+          )}
 
-          {logged() &&
+          {logged() && (
             <div>
               <HeaderLink to="/">
                 <FormattedMessage {...messages.home} />
@@ -47,7 +46,7 @@ function Header() {
               <HeaderLink to="/profile">
                 <FormattedMessage {...messages.Profile} />
               </HeaderLink>
-              
+
               <HeaderLink to="/create-event">
                 <FormattedMessage {...messages.CreateEvent} />
               </HeaderLink>
@@ -56,8 +55,7 @@ function Header() {
                 <FormattedMessage {...messages.LogOut} />
               </HeaderLink>
             </div>
-          }
-          
+          )}
         </NavBar>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { PrivateRoute } from '../_components/PrivateRoute'
 import { HomePage } from '../HomePage'
 import { LoginPage } from '../LoginPage'
 import { RegisterPage } from '../RegisterPage'
-import { PaginaPrincipal } from '../PaginaPrincipal'
+import { Home } from '../Home'
 import { Profile } from '../Profile'
 import { CreateEvent } from '../CreateEvent'
 import Header from '../_components/Header'
@@ -18,7 +18,7 @@ import { Detail } from '../Detail'
 import './app.css'
 
 function logged() {
-  return (localStorage.getItem('user') !== null)? true : false;
+  return localStorage.getItem('user') !== null ? true : false
 }
 
 class App extends React.Component {
@@ -42,33 +42,41 @@ class App extends React.Component {
           <Router history={history}>
             <div>
               <Header />
-              <div class="main">
+              <div className="main">
                 <Switch>
-                    {!logged() &&
+                  <React.Fragment>
+                    {!logged() && (
                       <div>
                         <Route exact path="/">
-                          <Redirect to="/login"/>
-                        </Route>         
+                          <Redirect to="/login" />
+                        </Route>
                         <Route path="/login" component={LoginPage} />
                         <Route path="/register" component={RegisterPage} />
                         <Redirect from="*" to="/login" />
                       </div>
-                    }
-                    {logged() && 
+                    )}
+                    {logged() && (
                       <div>
-                        <Route exact path="/" component={PaginaPrincipal}/>
+                        <Route exact path="/" component={Home} />
                         <Route path="/detail" component={Detail} />
-                        <Route exact path="/create-event" component={CreateEvent} />
+                        <Route
+                          exact
+                          path="/create-event"
+                          component={CreateEvent}
+                        />
                         <Route exact path="/logout" component={HomePage} />
                         <Route exact path="/profile" component={Profile} />
                         <Redirect from="*" to="/" />
                       </div>
-                    }
+                    )}
+                  </React.Fragment>
                 </Switch>
               </div>
             </div>
+            <div>
+              <Footer />
+            </div>
           </Router>
-          <Footer />
         </div>
       </IntlProvider>
     )
