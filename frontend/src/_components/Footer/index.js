@@ -1,13 +1,14 @@
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
-
 import Wrapper from './Wrapper'
 import messages from './messages'
 import mail from '../../../images/correo.jpg'
 import github from '../../../images/github.png'
 function Footer() {
   return (
-    <div className="d-flex border-top mt-4 align-items-center justify-content-around bg-light">
+
+	<div className="foot">
+    <div className="d-flex border-top mt-4 align-items-center justify-content-around bg-light" >
       <div className="bd-highlight mt-3 mb-5">
         <div className="mb-1 text-secondary">EVENTSFINDER</div>
 
@@ -110,6 +111,9 @@ function Footer() {
         </div>
       </div>
     </div>
+	</div>
+
+
     // <Wrapper>
 
     // <section>

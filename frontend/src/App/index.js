@@ -34,14 +34,21 @@ class App extends React.Component {
   render() {
     const { alert } = this.props
     return (
+	
       <IntlProvider locale="en">
-        <div>
+	
+        
           {alert.message && (
             <div className={`alert ${alert.type}`}>{alert.message}</div>
           )}
           <Router history={history}>
-            <div>
+            <div >
+	 <div className="fixed-top ">
+	     <div class="head">
               <Header />
+		</div>
+		</div>
+		<div class="try">
               <div class="main">
                 <Switch>
                     {!logged() &&
@@ -67,10 +74,17 @@ class App extends React.Component {
                 </Switch>
               </div>
             </div>
-          </Router>
+	<div className="fixed-bottom">
           <Footer />
-        </div>
+	</div>
+
+	</div>
+          </Router>
+	
+        
+	
       </IntlProvider>
+	
     )
   }
 }
