@@ -63,36 +63,3 @@ function Header() {
 }
 
 export default Header
-
-/*
-  <NavBar>
-
-        <HeaderLink to="/" >
-          <FormattedMessage {...messages.home} />
-        </HeaderLink>
-
-        <HeaderLink to="/login">
-          <FormattedMessage {...messages.SignIn} />
-        </HeaderLink>
-
-        <HeaderLink to="/register">
-          <FormattedMessage {...messages.SignUp} />
-        </HeaderLink>
-
-      </NavBar>
-
-
-<section>
-       // <FormattedMessage /> //{...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        //<FormattedMessage
-         // {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        ///>
-      </section>*/
