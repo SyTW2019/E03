@@ -34,7 +34,7 @@ class RegisterPage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleErrorEmail = this.handleErrorEmail.bind(this)
     this.handleErrorPwd = this.handleErrorPwd.bind(this) 
-    /*this.handleErrorName = this.handleErrorName.bind(this)*/
+    
     
   }
 
@@ -52,7 +52,6 @@ class RegisterPage extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log("Errores");
-    /*this.handleErrorName();*/
     this.handleErrorEmail();
     this.handleErrorPwd();
   
@@ -70,17 +69,6 @@ class RegisterPage extends React.Component {
   }
 
 
-    /*handleErrorName(event) {
-	if(this.checkName())
-	    this.setState({
-		nameError:false,
-  	    })
-        else
-            this.setState({
-                nameError:true,
-                
-            })
-    }*/
 
 
     handleErrorEmail(event){
@@ -156,16 +144,6 @@ class RegisterPage extends React.Component {
 
 
 
-
-    /*checkName(){
-        const { user } = this.state;
-	if(user.firstName.length === 0){
-		
-		return false;
-	}
-	else
-		return true;
-    }*/
 
 
 

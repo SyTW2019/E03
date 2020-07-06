@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
     const { username, password, submitted } = this.state
     return (
 
-	<div className="background" >
+	
 
 	<div className="center" >
       <div className="col-md-6 col-md-offset-3">
@@ -112,7 +112,7 @@ class LoginPage extends React.Component {
 	</div>
 
 
-	</div>
+	
     )
   }
 }
