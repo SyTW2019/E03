@@ -72,17 +72,9 @@ class RegisterPage extends React.Component {
 
 
     handleErrorEmail(event){
-        if(this.validateEmail())
             this.setState({
                 emailError:false,
-               
             })
-        else
-            this.setState({
-                emailError:true,
-                
-            })
-        
     }
     handleErrorPwd(event){
         if(this.check_pwd())
@@ -100,23 +92,6 @@ class RegisterPage extends React.Component {
             })
         
     }
-
-
-    
-
-    validateEmail(){
-        const { user } = this.state;
-        console.log(user.username)
-        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(user.username))
-        { user.emailError = true;
-          return true;
-        }
-        else{ 
-	  user.emailError = false;
-          return false;
-        }
-    }
-
 
 
     check_pwd(){
@@ -235,7 +210,7 @@ class RegisterPage extends React.Component {
               'form-group' + (submitted && !user.username ? ' has-error' : '')
             }
           >
-            <label htmlFor="username">Email</label>
+            <label htmlFor="username">Username</label>
             <input
               type="text"
               className="form-control"
@@ -247,16 +222,12 @@ class RegisterPage extends React.Component {
 		<br />
             {submitted && !user.username && (
 		
-              <div className="help-block">Email is required
+              <div className="help-block">Username is required
 		
 		</div>
             )}
-	    { !user.emailError && user.username && (
-		
-		<div className="help-block">Email must have the following format: example@example.com </div>)}
 
-
-	    {  user.username && user.emailError &&(
+	    {  user.username &&(
 		
 		<div><span>&#9989;</span></div>)}
           </div>

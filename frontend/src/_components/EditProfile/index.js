@@ -50,6 +50,10 @@ class EditProfile extends React.Component {
     for (let clave in changeUser)
       if (changeUser[clave] == '') delete changeUser[clave]
 
+    console.log(changeUser)
+
+    Object.assign(user,changeUser)
+
     this.props.update(user)
   }
 
