@@ -1,6 +1,7 @@
 import jsdom from 'jsdom'
 import React from 'react'
 import { mount, configure } from 'enzyme'
+import renderer from 'react-test-renderer'
 import Adapter from 'enzyme-adapter-react-16'
 
 import Card from '../index'
@@ -15,7 +16,7 @@ global.window = window
 global.document = window.document
 
 describe('<Card />', () => {
-  test('Comprobar que se renderiza Card', () => {
+  it('Comprobar que se renderiza Card', () => {
     const wrapper = mount(
         <Card
           src="/images/book.jpg"
@@ -27,4 +28,15 @@ describe('<Card />', () => {
     )
     expect(wrapper.find(Card)).toHaveLength(1)
   })
+
+  it('Snapshot', () => {  
+    const Component = renderer.create(<Card 
+      src="/images/book.jpg"
+      title="Firma de Libros de Miguel Noguera"
+      fecha="8 de Septiembre"
+      desc="El autor estará firmando libros en la libreria Lemus de La Laguna"
+      id="1"
+    />).toJSON();
+    expect(Component).toMatchSnapshot();
+  });
 })

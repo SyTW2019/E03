@@ -3,30 +3,11 @@ import React from 'react'
 import { mount, configure, render } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import Header from '../index.jsx'
+import renderer from 'react-test-renderer'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router'
 
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = value.toString();
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-};
+import LocalStorageMock from "../../../../__mocks__/localStorageMock"
 
 global.localStorage = new LocalStorageMock;
 
@@ -39,14 +20,24 @@ const { window } = dom
 global.window = window
 global.document = window.document
 
+var history = createMemoryHistory();
+
 describe('<Header />', () => {
   test('Comprobar que se renderiza Header', () => {
-    var history = createMemoryHistory();
     const wrapper = mount(
       <Router history={history}>
         <Header />
       </Router>
     )
     expect(wrapper.find(Header)).toHaveLength(1)
-  })  
+  })
+
+  it('Snapshot', () => {  
+    const Component = renderer.create(
+      <Router history={history}>
+        <Header />
+      </Router>
+    ).toJSON();
+    expect(Component).toMatchSnapshot();
+  });
 })

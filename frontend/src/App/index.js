@@ -88,3 +88,4 @@ const actionCreators = {
 
 const connectedApp = connect(mapState, actionCreators)(App)
 export { connectedApp as App }
+

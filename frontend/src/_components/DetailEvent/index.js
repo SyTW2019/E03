@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CardMedia from '@material-ui/core/CardMedia'
-import { assets } from '../../_helpers'
+import { assets } from '../../_helpers/assets'
 
 export class DetailEvent extends Component {
   render() {
