@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Grid from '@material-ui/core/Grid'
-import CustomizedMenus from '../_components/CustomizedMenus'
 import { eventActions } from '../_actions'
 import { connect } from 'react-redux'
 import { EventModal } from '../_components/Modal'
@@ -61,7 +60,6 @@ class Home extends React.Component {
                         onClick={() => this.toggleModal(event.id)}
                         key={index}
                       >
-                        {JSON.stringify(event)}
                       </Card>
                     </Col>
                   ))}
