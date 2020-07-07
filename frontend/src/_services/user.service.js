@@ -98,10 +98,6 @@ function handleResponse(response) {
         location.reload(true)
       }
 
-      if (response.status === 400) {
-        alert('Contraseña incorrecta')
-      }
-
       const error = (data && data.message) || response.statusText
       return Promise.reject(error)
     }

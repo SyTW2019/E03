@@ -32,7 +32,7 @@ class EventsProfile extends React.Component {
 
     return (
       <div className="w-75 ml-5">
-        <h1 className="mb-3"> Eventos </h1>
+        <h1 className="mb-3"> Events </h1>
         <ul className="list-group overflow-auto" style={{ maxHeight: '450px' }}>
           {eventos
             .filter(
@@ -54,7 +54,7 @@ class EventsProfile extends React.Component {
           {eventos.filter(
             (event) =>
               event.guests.includes(user._id) || event.creator == user._id
-          ) == 0 && <p>No se ha apuntado ni creado ningún evento todavía</p>}
+          ) == 0 && <p>No event has been logged or created yet</p>}
         </ul>
       </div>
     )

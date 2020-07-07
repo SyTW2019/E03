@@ -12,14 +12,14 @@ function Footer() {
           <div className="mb-1 text-secondary">EVENTSFINDER</div>
 
           <div>
-            Esta página web le permite crear eventos, apuntarse a ellos, <br />
-            compartirlos, así como ver los eventos próximos y <br />
-            acceder a una extensa comunidad de eventos.
+            This website allows you to create events, sign up for them, <br />
+            join them as well as see upcoming events and <br />
+            access an extensive community of events.
           </div>
         </div>
 
         <div className="bd-highlight mt-3 mb-5 pb-4 mr-5 pr-5">
-          <div className="mb-1 text-secondary">ENLACE AL PROYECTO</div>
+          <div className="mb-1 text-secondary">LINK TO THE PROJECT</div>
 
           <div className="d-flex align-items-center">
             <img
@@ -31,13 +31,13 @@ function Footer() {
             />
 
             <a href="https://github.com/SyTW2019/E03" className="ml-1">
-              GitHub del Proyecto
+              Github's project
             </a>
           </div>
         </div>
 
         <div className="bd-highlight mt-3 mb-2">
-          <div className="mb-1 text-secondary">CONTACTO</div>
+          <div className="mb-1 text-secondary">CONTACT</div>
 
           <div className="d-flex align-items-center">
             <img

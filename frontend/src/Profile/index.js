@@ -64,21 +64,21 @@ class Profile extends React.Component {
                     type="button"
                     className="btn btn-outline-dark rounded mb-2"
                   >
-                    Datos relevantes del usuario
+                    User information
                   </button>
                   <button
                     onClick={this.editProfile}
                     type="button"
                     className="btn btn-outline-dark rounded mb-2"
                   >
-                    Editar información
+                    Edit information
                   </button>
                   <button
                     onClick={this.events}
                     type="button"
                     className="btn btn-outline-dark rounded mb-2"
                   >
-                    Eventos
+                    Events
                   </button>
                 </div>
               </div>
