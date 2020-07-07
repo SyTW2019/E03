@@ -64,7 +64,6 @@ class Profile extends React.Component {
                     type="button"
                     className="btn btn-outline-dark rounded mb-2"
                   >
-                    {' '}
                     Datos relevantes del usuario
                   </button>
                   <button
