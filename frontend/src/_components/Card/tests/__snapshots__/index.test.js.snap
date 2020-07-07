@@ -37,7 +37,12 @@ exports[`<Card /> Snapshot 1`] = `
         Firma de Libros de Miguel Noguera
       </h2>
       <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+        className="MuiTypography-root text-truncate MuiTypography-body2 MuiTypography-colorTextSecondary"
+        style={
+          Object {
+            "maxWidth": "240px",
+          }
+        }
       />
       <br />
       Lugar: 
