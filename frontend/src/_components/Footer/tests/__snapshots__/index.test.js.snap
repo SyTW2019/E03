@@ -16,11 +16,11 @@ exports[`<Footer /> Snapshot 1`] = `
         EVENTSFINDER
       </div>
       <div>
-        Esta página web le permite crear eventos, apuntarse a ellos, 
+        This website allows you to create events, sign up for them, 
         <br />
-        compartirlos, así como ver los eventos próximos y 
+        join them as well as see upcoming events and 
         <br />
-        acceder a una extensa comunidad de eventos.
+        access an extensive community of events.
       </div>
     </div>
     <div
@@ -29,7 +29,7 @@ exports[`<Footer /> Snapshot 1`] = `
       <div
         className="mb-1 text-secondary"
       >
-        ENLACE AL PROYECTO
+        LINK TO THE PROJECT
       </div>
       <div
         className="d-flex align-items-center"
@@ -45,7 +45,7 @@ exports[`<Footer /> Snapshot 1`] = `
           className="ml-1"
           href="https://github.com/SyTW2019/E03"
         >
-          GitHub del Proyecto
+          Github's project
         </a>
       </div>
     </div>
@@ -55,7 +55,7 @@ exports[`<Footer /> Snapshot 1`] = `
       <div
         className="mb-1 text-secondary"
       >
-        CONTACTO
+        CONTACT
       </div>
       <div
         className="d-flex align-items-center"
