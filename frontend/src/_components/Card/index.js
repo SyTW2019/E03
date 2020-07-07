@@ -30,16 +30,18 @@ export default function ImgMediaCard(props) {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography className="text-truncate" style={{ maxWidth: "230px" }} gutterBottom variant="h5" component="p">
             {title}
           </Typography>
           <Typography className="text-truncate" style={{ maxWidth: "240px" }} variant="body2" color="textSecondary" component="p">
             {descripcion}
           </Typography>
           <br />
-          Lugar: {localizacion}
+            <div className="text-truncate" style={{ maxWidth: "240px" }}>
+              Place: {localizacion}
+            </div>
           <br /> <br />
-          Fecha: {fechaInicio}
+          Date: {fechaInicio}
         </CardContent>
       </CardActionArea>
     </Card>
